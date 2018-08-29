@@ -1,5 +1,5 @@
 import java.util.Scanner;
-/*
+/**
 *Do not modify this main function.
 */
 public final class Solution {
@@ -18,23 +18,20 @@ public final class Solution {
         Scanner s = new Scanner(System.in);
         int n1 = s.nextInt();
         int n2 = s.nextInt();
-        int gcd = gcd(n1,n2);
+        int gcd = gcd(n1, n2);
         System.out.println(gcd);
     }
      /**
-      * { function_description }
-      *
-      * @param      n1    The n 1
-      * @param      n2    The n 2
-      *
-      * @return     { description_of_the_return_value }
+      * @param      n1    The n 1.
+      * @param      n2    The n 2.
+      * @return     { description_of_the_return_value }.
       */
     static int gcd(final int n1, final int n2) {
         if (n2 != 0) {
             return gcd(n2, n1 % n2);
-        }
-        else {
+        } else {
             return n1;
         }
     }
  }
+
