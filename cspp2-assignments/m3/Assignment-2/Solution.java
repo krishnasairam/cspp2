@@ -1,8 +1,8 @@
 import java.util.Scanner;
 /**
-	*class solution.
+  *class solution.
 */
-public class Solution {
+public final class Solution {
   /**
   * Constructs the object.
   */
@@ -14,18 +14,22 @@ public class Solution {
      /**
      * @param args  The arguments.
      */
-    public static void main(String[] args) {
-        Scanner s=new Scanner(System.in);      
+    public static void main(final String[] args) {
+        Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         int count = 0;
-        for (int i = 1;i <= n;i++) {
-        	if ((i % 10) == 7) {
-        		count = count + 1;
-        	}
-        	if ((i / 10) == 7) {
-        		count++;
-        	}
-        }
-       System.out.println(count); 
+        for (int i = 1; i <= n; i++) {
+          String string = String.valueOf(i);
+          char[] character = string.toCharArray();
+          char seven = '7';
+          for (char a : character) {
+            if (a == seven) {
+              count++;
+            }
+          }
+       }
+       System.out.println(count);
     }
 }
+
+
