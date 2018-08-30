@@ -23,7 +23,7 @@ public final class Solution {
       for (int i = 0; i < row1; i++) {
           for (int j = 0; j < col1; j++) {
             x1[i][j] = scan.nextInt();
-        }scan.nextLine();
+        } scan.nextLine();
         }
       int row2 = scan.nextInt();
       int col2 = scan.nextInt();
@@ -39,14 +39,13 @@ public final class Solution {
         int row = x1.length;
         int col = x1[0].length;
         for (int i = 0; i < row; i++) {
-          String s ="";
+          String s = "";
           for (int j = 0; j < col; j++) {
           rs[i][j] = x1[i][j] + x2[i][j];
           s += rs[i][j] + " ";
         }
-        System.out.println(s.substring(0,s.length() - 1));
+        System.out.println(s.substring(0, s.length() - 1));
       }
-      
      } else {
         System.out.println("not possible");
     }
