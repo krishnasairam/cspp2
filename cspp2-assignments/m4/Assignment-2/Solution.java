@@ -32,18 +32,21 @@ public final class Solution {
             x2[i][j] = scan.nextInt();
         }scan.nextLine();
         }
-      int[][] rs = x1;
+        if (row1 == row2 && col1 == col2){
+        int[][] rs = x1;
     	int row = x1.length;
     	int col = x1[0].length;
     	for (int i = 0; i < row; i++) {
+    	  String s ="";
     	  for (int j = 0; j < col; j++) {
     	  rs[i][j] = x1[i][j] + x2[i][j];
+          s += rs[i][j] + " ";
     	}
+    	System.out.println(s.substring(0,s.length()-1));
       }
-      for(int i = 0; i < row1; i++ ) {
-      	for(int j =0; j < col1; j++) {
-      		System.out.print(rs[i][j]);
-      	}System.out.println();
-      }   	
+      
+     } else {
+     	System.out.println("not possible");
+     }   	
   }
 }
