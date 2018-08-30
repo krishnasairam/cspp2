@@ -42,7 +42,7 @@ public final class Solution {
       }
       for(int i = 0; i < row1; i++ ) {
       	for(int j =0; j < col1; j++) {
-      		System.out.print(rs[i][j]+" ");
+      		System.out.print(rs[i][j]);
       	}System.out.println();
       }   	
   }
