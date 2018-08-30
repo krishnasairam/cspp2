@@ -2,7 +2,7 @@ import java.util.*;
 /**
  * Class for finding the largest number in array.
  */
-public class Solution {
+public final class  Solution {
     /**
     * Constructs the object.
     */
@@ -13,13 +13,12 @@ public class Solution {
      * { It is the main function }.
      * @param args  The arguments.
      */
-	public static void main(String[] args)
+	public static void main(final String[] args)
 	{
-		Scanner sc=new Scanner(System.in);
-		int n= sc.nextInt();
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
 		int[] arr = new int[n];
         int temp = 0;
-        System.out.println("enter elements");
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
