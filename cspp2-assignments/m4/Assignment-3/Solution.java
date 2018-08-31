@@ -7,12 +7,13 @@ public final class Solution {
      * Constructs the object.
      */
     private Solution() {
+        //Empty constructor.
+    }
     /**
      * { function_description }.
      *
      * @param      args  The arguments.
      */
-    }
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
