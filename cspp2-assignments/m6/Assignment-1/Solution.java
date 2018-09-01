@@ -17,9 +17,11 @@ public final class Solution {
         //not used
     }
     /**
-     * Prints the odd composite numbers between 2 and n.
+     * { function_description }
      *
-     * @param      n     n value.
+     * @param      n     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
      */
     static int oddComposites(final int n) {
     for (int j = X; j < n; j++) {
@@ -35,7 +37,7 @@ public final class Solution {
             System.out.println(j);
         }
     } return n;
-}    
+}
     /**
     * main method as driver program.
     * @param args is the parameter for this method
