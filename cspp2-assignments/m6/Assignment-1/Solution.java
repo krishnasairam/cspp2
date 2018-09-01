@@ -6,6 +6,10 @@ import java.util.Scanner;
  * @author : sairam.
  */
 public final class Solution {
+/**
+ * @param X value.
+ */
+    static final int X = 3;
     /**
     * Empty constructor.
     */
@@ -15,22 +19,21 @@ public final class Solution {
     /**
      * Prints the odd composite numbers between 2 and n.
      *
-     * @param      n     n value
+     * @param      n     n value.
      */
     static int oddComposites(final int n) {
-    int a = 3;	
-    for (int j = a; j < n; j++)	{
-    int count = 0;	
-		for (int i = a; i < j; i++) {
-			if (i % 2 != 0 && j % 2 != 0) {
-				if (j % i == 0) {
-					count = count + 1;
-				}
-			}
-		}
-		if (count > 0) {
-			System.out.println(j);
-		}
+    for (int j = X; j < n; j++) {
+    int count = 0;
+        for (int i = X; i < j; i++) {
+            if (i % 2 != 0 && j % 2 != 0) {
+                if (j % i == 0) {
+                    count = count + 1;
+                }
+            }
+        }
+        if (count > 0) {
+            System.out.println(j);
+        }
     } return n;
 }    
     /**
