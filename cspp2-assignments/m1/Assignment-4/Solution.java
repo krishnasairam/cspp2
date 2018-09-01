@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**.
     * Date: 28-08-2018.
     * Name: Sai Ram.
-    * Area of the trian.
+    * Area of calculateFromDegreesToFarenheit.
 */
 public final class Solution {
     /**

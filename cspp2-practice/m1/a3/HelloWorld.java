@@ -1,7 +1,6 @@
 /**
 A simple class to compile.
 */
-
 final class HelloWorld {
   /** main parameters.
   */
@@ -14,6 +13,6 @@ final class HelloWorld {
   @param args of type String[]
   */
     public static void main(final String[] args) {
-    System.out.println("hello world");
+    System.out.println(6/2 == 6/2.0);
   }
 }

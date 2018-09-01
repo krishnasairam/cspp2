@@ -30,10 +30,10 @@ final class Solution {
                     if (a[i][j] < 50) {
                        rs[i][j] = 0; 
                     } else if ( k < a[i][j] && a[i][j] < k + 100) {
-                        rs[i][j] = k + 50;   
+                        rs[i][j] = k + 50;
                     }
                 } 
-            }            
+            }
     } return rs;
 }    
     /**

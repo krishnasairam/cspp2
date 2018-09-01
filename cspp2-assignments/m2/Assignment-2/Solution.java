@@ -36,9 +36,9 @@ public final class Solution {
     /**
      * { It is the method for finding the roots }.
      *
-     * @param      a     { parameter_description }
-     * @param      b     { parameter_description }
-     * @param      c     { parameter_description }
+     * @param a { parameter_description }
+     * @param b { parameter_description }
+     * @param c { parameter_description }
      *
      */
     public static void roots(final int a, final int b, final int c) {
