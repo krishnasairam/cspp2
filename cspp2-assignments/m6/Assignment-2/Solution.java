@@ -8,9 +8,11 @@ import java.util.Scanner;
 final class Solution {
 /**
  * @param X value.
- * @param Y value.
  */
     static final int X = 50;
+/**
+ * @param Y value.
+ */
     static final int Y = 100;
     /**
      * Constructs the object.
