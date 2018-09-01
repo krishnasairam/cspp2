@@ -6,8 +6,8 @@ import java.util.Scanner;
  * @author : sairam.
  */
 final class Solution {
-    static final int x = 50;
-    static final int y = 100;
+    static final int X = 50;
+    static final int Y = 100;
     /**
      * Constructs the object.
      */
@@ -28,16 +28,16 @@ final class Solution {
     int[][] rs = new int[rows][columns];
     for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                for (int k = x; k < a[i][j] + x; k = k + y) {
-                    if (a[i][j] < x) {
+                for (int k = X; k < a[i][j] + X; k = k + Y) {
+                    if (a[i][j] < X) {
                        rs[i][j] = 0;
-                    } else if (k < a[i][j] && a[i][j] < k + y) {
-                        rs[i][j] = k + x;
+                    } else if (k < a[i][j] && a[i][j] < k + Y) {
+                        rs[i][j] = k + X;
                     }
                 }
             }
     } return rs;
-}    
+}
     /**
      * Main function.
      *
