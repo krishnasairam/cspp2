@@ -5,6 +5,10 @@ import java.util.Scanner;
  *
  * @author : sairam.
  */
+/**
+ * @param X value.
+ * @param Y value.
+ */
 final class Solution {
     static final int X = 50;
     static final int Y = 100;
