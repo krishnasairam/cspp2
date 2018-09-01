@@ -17,11 +17,11 @@ public final class Solution {
         //not used
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @param      n     { parameter_description }
+     * @param      n     { parameter_description }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { description_of_the_return_value }.
      */
     static int oddComposites(final int n) {
     for (int j = X; j < n; j++) {
@@ -48,3 +48,5 @@ public final class Solution {
         oddComposites(n);
     }
 }
+
+
