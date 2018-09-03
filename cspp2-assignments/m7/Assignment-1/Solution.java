@@ -16,10 +16,10 @@ class InputValidator {
         /**
          * InputValidator.
          */
-        String data = d;
+        data = d;
     }
     /**
-     * validate Data .
+     * validateData.
      *
      * @return     boolean.
      */
