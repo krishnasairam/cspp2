@@ -10,19 +10,19 @@ class InputValidator {
      * @param      d    data.
      */
     public InputValidator (String d) {
-    /**
-     * InputValidator.
-     */
-    data = d;
+        /**
+         * InputValidator.
+         */
+        data = d;
     }
     final boolean validateData () {
-        int X = 6;
+        final int X = 6;
         if (data.length() >= X) {
             return true;
         } else {
             return false;
         }
-}
+    }
 }
 /**
  * class solution.
