@@ -25,11 +25,7 @@ class InputValidator {
      */
     final boolean validateData() {
         final int a = 6;
-        if (data.length() >= a) {
-            return true;
-        } else {
-            return false;
-        }
+        return data.length() >= a;
     }
 }
 /**
