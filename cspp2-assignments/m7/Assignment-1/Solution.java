@@ -12,12 +12,17 @@ class InputValidator {
      *
      * @param      d    data.
      */
-    public InputValidator(String d) {
+    public InputValidator(final String d) {
         /**
          * InputValidator.
          */
         data = d;
     }
+    /**
+     * validate Data .
+     *
+     * @return     boolean.
+     */
     final boolean validateData() {
         final int a = 6;
         if (data.length() >= a) {
