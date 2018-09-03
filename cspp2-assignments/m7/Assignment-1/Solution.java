@@ -16,7 +16,7 @@ class InputValidator {
         /**
          * InputValidator.
          */
-        data = d;
+        String data = d;
     }
     /**
      * validate Data .
