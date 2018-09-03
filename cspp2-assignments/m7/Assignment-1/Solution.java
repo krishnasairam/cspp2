@@ -16,7 +16,8 @@ class InputValidator {
     data = d;
     }
     final boolean validateData () {
-        if (data.length() >= 6) {
+        int X = 6;
+        if (data.length() >= X) {
             return true;
         } else {
             return false;
@@ -24,14 +25,22 @@ class InputValidator {
 }
 }
 /**
- * { item_description }.
+ * class solution.
  */
-public final class Solution
-{
+public final class Solution {
+    /**
+    * Empty constructor.
+    */
+    private Solution() {
+        //not used
+    }
+    /**
+     * @param args is the parameter for this method.
+     */
     public static void main(final String args[]) {
         Scanner s = new Scanner(System.in);
         String input = s.next();
-        InputValidator i = new InputValidator(input);       
+        InputValidator i = new InputValidator(input);
         System.out.println(i.validateData());
 
     }
