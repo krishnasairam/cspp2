@@ -1,4 +1,7 @@
 import java.util.Scanner;
+/**
+ * Class for input validator.
+ */
 class InputValidator {
     /**
      * { var_description }.
@@ -9,15 +12,15 @@ class InputValidator {
      *
      * @param      d    data.
      */
-    public InputValidator (String d) {
+    public InputValidator(String d) {
         /**
          * InputValidator.
          */
         data = d;
     }
-    final boolean validateData () {
-        final int X = 6;
-        if (data.length() >= X) {
+    final boolean validateData() {
+        final int a = 6;
+        if (data.length() >= a) {
             return true;
         } else {
             return false;
