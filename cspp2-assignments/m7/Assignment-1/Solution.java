@@ -16,7 +16,7 @@ class InputValidator {
     data = d;
     }
     final boolean validateData () {
-        if (data.length() == 6) {
+        if (data.length() >= 6) {
             return true;
         } else {
             return false;
