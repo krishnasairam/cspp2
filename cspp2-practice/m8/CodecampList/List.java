@@ -301,7 +301,7 @@ public class List {
             case "get":
                 if (Integer.parseInt(tokens[1]) < l.size()) {
                     System.out.println(l.get(Integer.parseInt(tokens[1])));
-                } 
+                }
                 break;
             case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
@@ -312,3 +312,5 @@ public class List {
         }
     }
 }
+
+
