@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 public class List {
     //Implement all the methods mentioned to build a ListADT
-    private static int x = 10;
+    private static final int x = 10;
     /*
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
