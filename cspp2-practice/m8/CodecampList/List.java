@@ -147,7 +147,7 @@ public class List {
      * How do we check if the position is greater than the 
      * number of items in the list? Would size variable be useful?
      */
-    public int get(int index) {
+    public int get (int index) {
         // Replace the code below to write the code for get
         return array[index];
     }
@@ -245,8 +245,9 @@ public class List {
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
                 case "get":
-                System.out.println(l.get(Integer.parseInt(tokens[1])));
-                break;
+                if (Integer.parseInt(tokens[1]) > l.size()) {
+                    System.out.println(l.get(Integer.parseInt(tokens[1])));
+                } break;
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
