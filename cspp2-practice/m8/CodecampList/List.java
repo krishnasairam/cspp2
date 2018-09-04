@@ -32,6 +32,9 @@ public class List {
     // don't create the array yet using new
     // that's the job of the List constructor
     private int[] array;
+    /**
+     * { item_description }.
+     */
     /*
      * What are the other class variables needed for creating a list?
      * How about keeping track of the size of the list?
@@ -56,6 +59,9 @@ public class List {
     // again, don't initialize it here
     // variable initialization should be done in the constructor
     private int size;
+    /**
+     * { item_description }.
+     */
     /**
      * The purpose of the constructor is to initialize the.
      * class variables with some default values.
@@ -92,7 +98,7 @@ public class List {
      *
      * @param      item  The item.
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         array[size()] = item;
         size = size + 1;
@@ -139,7 +145,7 @@ public class List {
      *
      * @param      index  The index.
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index < size) {
@@ -169,7 +175,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }.
      */
-    public int get (int index) {
+    public int get (final int index) {
         // Replace the code below to write the code for get
         return array[index];
     }
@@ -221,7 +227,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }.
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
         for (int i = size; i >= 0; i--) {
             if (array[i] == item) {
@@ -242,7 +248,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }.
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = size; i >= 0; i--) {
             if (array[i] == item) {
@@ -255,7 +261,7 @@ public class List {
      *
      * @param      args  The arguments.
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
         // code to read the test cases input file
