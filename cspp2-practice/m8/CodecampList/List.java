@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 public class List {
     //Implement all the methods mentioned to build a ListADT
-    public static int X = 10;
+    private static int x = 10;
     /*
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -73,7 +73,7 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        this.array = new int[X];
+        this.array = new int[x];
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
