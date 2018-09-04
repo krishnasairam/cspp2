@@ -5,6 +5,9 @@ import java.util.Scanner;
  */
 public class List {
     //Implement all the methods mentioned to build a ListADT
+    /**
+    * @param X array size.
+    */
     private static final int X = 10;
     /*
      * The goal for the list is to store items.
