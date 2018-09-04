@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 public class List {
     //Implement all the methods mentioned to build a ListADT
-
+    public static int X = 10;
     /*
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -31,10 +31,10 @@ public class List {
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
-    private int[] array;
     /**
-     * { item_description }.
-     */
+    * @param array is a list.
+    */
+    private int[] array;
     /*
      * What are the other class variables needed for creating a list?
      * How about keeping track of the size of the list?
@@ -58,10 +58,10 @@ public class List {
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
-    private int size;
     /**
-     * { item_description }.
-     */
+    * @param size is the size of list.
+    */
+    private int size;
     /**
      * The purpose of the constructor is to initialize the.
      * class variables with some default values.
@@ -73,7 +73,7 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        this.array = new int[10];
+        this.array = new int[X];
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
@@ -175,7 +175,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }.
      */
-    public int get (final int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         return array[index];
     }
