@@ -27,6 +27,9 @@ public final class Fibonacci {
      *
      * Look for the hint.txt if some of the testcases fail.
      */
+    /**
+     * Constructs the object.
+     */
     private  Fibonacci() {
     /**
     * Empty constructor.
@@ -66,3 +69,4 @@ public final class Fibonacci {
         System.out.println(fib(n));
     }
 }
+
