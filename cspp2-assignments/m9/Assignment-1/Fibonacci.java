@@ -34,6 +34,11 @@ public final class Fibonacci {
      *
      * @return     list.
      */
+    private  Fibonacci() {
+    /**
+     * Empty constructor.
+     */
+    }
     public static List fib(final int n) {
         // todo - complete this method
         List l = new List(n);
