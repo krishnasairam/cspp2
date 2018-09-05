@@ -70,6 +70,7 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
+        
         list = new int[10];
 
         // Think about the initial value for size.
@@ -78,7 +79,10 @@ public class List {
         // That is the initial value to use for size.
         size = 0;
     }
-
+    public List(int overloaded) {
+    	list = new int[overloaded];
+    	size = 0;
+    }
     /*
      * Overloaded constructor with list capacity as argument
      * The default constructor sets the list capacity to 10
