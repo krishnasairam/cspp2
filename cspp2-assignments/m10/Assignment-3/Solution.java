@@ -35,8 +35,8 @@ class Student {
      * @return     { description_of_the_return_value }.
      */
     @Override
-    public boolean equals(final Object other) { 
-    //This method is to check if 
+    public boolean equals(final Object other) {
+    //This method is to check if
     //two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
