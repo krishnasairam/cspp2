@@ -11,6 +11,9 @@ class Student {
     private Student() {
         //function.
     }
+    /**
+     * { var_description }.
+     */
     private String name;
     /**
      * Constructs the object.
