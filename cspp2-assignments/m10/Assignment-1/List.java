@@ -110,9 +110,21 @@ public class List {
 	 * The method returns void (nothing)
 	 */
 	public void add(int item) {
-		//Inserts the specified element at the end of the zelist.
-		list[size++] = item;
-	}
+        //Inserts the specified element at the end of the list.
+        if (size == list.length) {
+            resize();
+        }
+        list[size++] = item;  
+    }
+
+    public void resize() {
+    int resizefactor = 2;    
+    int[] temp = new int[resizefactor*size];
+    for (int i = 0; i < size; i++) {
+        temp[i] = list [i];
+    }
+    list = temp;
+    }
 
 	/*
 	 *
