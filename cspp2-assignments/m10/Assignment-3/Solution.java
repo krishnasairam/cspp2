@@ -194,6 +194,69 @@ public final class Solution {
                 }
     }
 }
+    static void cmethod(final Scanner stdin) {
+            List<Character> listCharacter = new List();
+            while (stdin.hasNext()) {
+                // read the line
+                String line = stdin.nextLine();
+                // split the line using space
+                String[] tokens = line.split(" ");
+                // based on the list operation invoke
+                // the corresponding method
+                switch (tokens[0]) {
+                case "add":
+                    listCharacter.add(tokens[1].charAt(0));
+                    break;
+                case "addAll":
+                    if (tokens.length == 2) {
+                        String[] t1 = tokens[1].split(",");
+                        Character[] temp = new Character[t1.length];
+                        for (int i = 0; i < t1.length; i++) {
+                            temp[i] = t1[i].charAt(0);
+                        }
+                        listCharacter.addAll(temp);
+                    }
+                    break;
+                case "size":
+                    // invoke size method and print the list size
+                    // BTW, list size is not the array size
+                    // it is the number of items in the list
+                    System.out.println(listCharacter.size());
+                    break;
+                case "print":
+                    // print the list (implement toString
+                    // in List class
+                    //for this to work)
+                    // expected format is [item-1,item-2,...,item-n]
+                    // review the output testcase file
+                    System.out.println(listCharacter);
+                    break;
+                case "remove":
+                    listCharacter.remove(Integer.
+                        parseInt(tokens[1]));
+                    break;
+                case "indexOf":
+                    System.out.println(listCharacter.
+                        indexOf(tokens[1].charAt(0)));
+                    break;
+                case "get":
+                    System.out.println(listCharacter.
+                        get(Integer.parseInt(tokens[1])));
+                    break;
+                case "contains":
+                    System.out.println(listCharacter.
+                        contains(tokens[1].charAt(0)));
+                    break;
+                default:
+                    break;
+                }
+            }
+        }    
+/**
+ * main.
+ *
+ * @param      args  The arguments.
+ */
     public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
@@ -371,72 +434,16 @@ public final class Solution {
             break;
 
         case "C"://This case will be executed for Character type list
-            List<Character> listCharacter = new List();
-            while (stdin.hasNext()) {
-                // read the line
-                String line = stdin.nextLine();
-                // split the line using space
-                String[] tokens = line.split(" ");
-                // based on the list operation invoke
-                // the corresponding method
-                switch (tokens[0]) {
-                case "add":
-                    listCharacter.add(tokens[1].charAt(0));
-                    break;
-                case "addAll":
-                    if (tokens.length == 2) {
-                        String[] t1 = tokens[1].split(",");
-                        Character[] temp = new Character[t1.length];
-                        for (int i = 0; i < t1.length; i++) {
-                            temp[i] = t1[i].charAt(0);
-                        }
-                        listCharacter.addAll(temp);
-                    }
-                    break;
-                case "size":
-                    // invoke size method and print the list size
-                    // BTW, list size is not the array size
-                    // it is the number of items in the list
-                    System.out.println(listCharacter.size());
-                    break;
-                case "print":
-                    // print the list (implement toString
-                    // in List class
-                    //for this to work)
-                    // expected format is [item-1,item-2,...,item-n]
-                    // review the output testcase file
-                    System.out.println(listCharacter);
-                    break;
-                case "remove":
-                    listCharacter.remove(Integer.
-                        parseInt(tokens[1]));
-                    break;
-                case "indexOf":
-                    System.out.println(listCharacter.
-                        indexOf(tokens[1].charAt(0)));
-                    break;
-                case "get":
-                    System.out.println(listCharacter.
-                        get(Integer.parseInt(tokens[1])));
-                    break;
-                case "contains":
-                    System.out.println(listCharacter.
-                        contains(tokens[1].charAt(0)));
-                    break;
-                default:
-                    break;
-                }
-            }
+            cmethod(stdin);
             break;
 
         case "D"://This case will be executed for Double type list
             dmethod(stdin);
-            break;         
-   
+            break;
         case "O":
         //This case will be executed for Student
         //type list i.e to store List of Student Objects
-            dmethod(stdin);
+            omethod(stdin);
             break;
         default:
             break;
