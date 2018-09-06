@@ -73,7 +73,7 @@ public final class Solution {
                 String line = stdin.nextLine();
                 // split the line using space
                 String[] tokens = line.split(" ");
-                // based on the list operation 
+                // based on the list operation
                 //invoke the corresponding method
                 switch (tokens[0]) {
                 case "add":
@@ -92,7 +92,7 @@ public final class Solution {
                     System.out.println(listString.size());
                     break;
                 case "print":
-                    // print the list 
+                    // print the list
                     // (implement toString in List class
                     //for this to work)
                     // expected format is [item-1,item-2,...,item-n]
@@ -127,7 +127,7 @@ public final class Solution {
                 String line = stdin.nextLine();
                 // split the line using space
                 String[] tokens = line.split(" ");
-                // based on the list operation 
+                // based on the list operation
                 //invoke the corresponding method
                 switch (tokens[0]) {
                 case "add":
@@ -151,7 +151,7 @@ public final class Solution {
                     System.out.println(listInteger.size());
                     break;
                 case "print":
-                    // print the list (implement 
+                    // print the list (implement
                     // toString in List class
                     //for this to work)
                     // expected format is [item-1,item-2,...,item-n]
@@ -186,7 +186,7 @@ public final class Solution {
                 String line = stdin.nextLine();
                 // split the line using space
                 String[] tokens = line.split(" ");
-                // based on the list operation 
+                // based on the list operation
                 //invoke the corresponding method
                 switch (tokens[0]) {
                 case "add":
@@ -268,7 +268,7 @@ public final class Solution {
                     System.out.println(listCharacter.size());
                     break;
                 case "print":
-                    // print the list (implement toString 
+                    // print the list (implement toString
                     // in List class
                     //for this to work)
                     // expected format is [item-1,item-2,...,item-n]
