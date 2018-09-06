@@ -76,7 +76,7 @@ public final class Solution {
         //Empty.
     }
     /**
-     * { function_description }.
+     * dmethod.
      *
      * @param      args  The arguments.
      */
@@ -138,6 +138,11 @@ public final class Solution {
                 }
             }
     }
+    /**
+     * omethod.
+     *
+     * @param      stdin  The stdin.
+     */
     static void omethod(final Scanner stdin) {
                     List<Student> listStudent = new List();
             while (stdin.hasNext()) {
@@ -194,6 +199,11 @@ public final class Solution {
                 }
     }
 }
+    /**
+     * cmethod.
+     *
+     * @param      stdin  The stdin.
+     */
     static void cmethod(final Scanner stdin) {
             List<Character> listCharacter = new List();
             while (stdin.hasNext()) {
@@ -252,6 +262,11 @@ public final class Solution {
                 }
             }
         }
+    /**
+     * fmethod.
+     *
+     * @param      stdin  The stdin.
+     */
     static void fmethod(final Scanner stdin) {
     List<Float> listFloat = new List();
             while (stdin.hasNext()) {
@@ -309,7 +324,7 @@ public final class Solution {
                     break;
                 }
             }
-        }                 
+        }
 /**
  * main.
  *
@@ -453,4 +468,6 @@ public final class Solution {
         }
     }
 }
+
+
 
