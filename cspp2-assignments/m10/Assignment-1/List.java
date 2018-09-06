@@ -296,7 +296,9 @@ public final class List {
         for (i = 0; i < size - 1; i++) {
             str = str + list[i] + ",";
         }
-        str = str + list[i] + "]";
+        if (get(0)== 0) {
+         str = str + list[i] + "]";   
+        }
         return str;
     }
 
@@ -340,7 +342,9 @@ public final class List {
     /*Inserts all the elements of specified int
      array to the end of list*/
     /**
-     * addAll.
+     * Adds all.
+     *
+     * @param      items  The items.
      */
     public void addAll(final int[] items) {
         for (int a:items) {
