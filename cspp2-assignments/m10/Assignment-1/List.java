@@ -69,7 +69,7 @@ public final class List {
      /**
      * magic number.
      */
-    private final int A = 10;
+    private final int a = 10;
     /**
      * Constructs the object.
      */
@@ -80,7 +80,7 @@ public final class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        list = new int[A];
+        list = new int[a];
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
@@ -133,16 +133,16 @@ public final class List {
         if (size == list.length) {
             resize();
         }
-        list[size++] = item;  
+        list[size++] = item;
     }
     /**
      * resize.
      */
     public void resize() {
-    int resizefactor = 2;    
-    int[] temp = new int[resizefactor*size];
+    int resizefactor = 2;
+    int[] temp = new int[resizefactor * size];
     for (int i = 0; i < size; i++) {
-        temp[i] = list [i];
+        temp[i] = list[i];
     }
     list = temp;
     }
@@ -166,7 +166,8 @@ public final class List {
      * with the contents of the original array.
      *
      * TODO
-     * Create a method called resize(). Resize should create an new array that is
+     * Create a method called resize(). 
+     * Resize should create an new array that is
      * double the size of the old array.
      * Then copy the contents of the old array to the new one.
      *
@@ -174,7 +175,8 @@ public final class List {
      * Will the client invoke resize or is it internal to List class?
      * Should the resize be public method or private?
      * Should the resize method return any values?
-     * You know enough of Object Oriented Programming to answer these questions :-)
+     * You know enough of Object Oriented 
+     * Programming to answer these questions :-)
      *
      */
 
@@ -286,8 +288,9 @@ public final class List {
      * @return     String representation of the object.
      */
     public String toString() {
-        if (size == 0)
+        if (size == 0) {
             return "[]";
+        }
         String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
@@ -328,8 +331,9 @@ public final class List {
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
-            if (item == list[i])
+            if (item == list[i]) {
                 return i;
+            }
         }
         return -1;
     }
@@ -338,7 +342,7 @@ public final class List {
     /**
      * addAll.
      */
-    public void addAll(final int items[]) {
+    public void addAll(final int[] items) {
         for (int a:items) {
             add(a);
         }
@@ -356,15 +360,15 @@ public final class List {
      * @param      item   The item.
      */
     public void add(final int index, final int item) {
-        if (index >=0) {
-            for (int i = size-1; i >= index ; i--) {
-                list[i+1] = list[i];
+        if (index >= 0) {
+            for (int i = size - 1; i >= index; i--) {
+                list[i + 1] = list[i];
             }
             list[index] = item;
             size++;
         } else {
             System.out.println("Negative Index Exception");
-        }   
+        }
     }
 
     /* Returns the count of occurances of a given item in the list*/
@@ -378,9 +382,10 @@ public final class List {
     public int count(final int item) {
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if (item == list[i])
+            if (item == list[i]) {
                 count = count + 1;
-        }   
+            }
+        }
         return count;
     }
     /**
@@ -401,7 +406,7 @@ public final class List {
             String line = stdin.nextLine();
             // split the line using space
             String[] tokens = line.split(" ");
-            // based on the list operation invoke the 
+            // based on the list operation invoke the
             //corresponding method
             switch (tokens[0]) {
             case "add":
@@ -410,9 +415,10 @@ public final class List {
                     if (t.length == 1) {
                         l.add(Integer.parseInt(tokens[1]));
                     } else {
-                        if (t.length > 1)
-                            l.add(Integer.parseInt(t[0]), 
+                        if (t.length > 1) {
+                            l.add(Integer.parseInt(t[0]),
                                 Integer.parseInt(t[1]));
+                        }
                     }
                 }
                 break;
@@ -423,9 +429,10 @@ public final class List {
             case "addAll":
                 if (tokens.length == 2) {
                     String[] t1 = tokens[1].split(",");
-                    int temp[] = new int[t1.length];
-                    for (int i = 0; i < temp.length; i++)
+                    int[] temp = new int[t1.length];
+                    for (int i = 0; i < temp.length; i++) {
                         temp[i] = Integer.parseInt(t1[i]);
+                    }
                     l.addAll(temp);
                 }
                 break;
@@ -456,6 +463,8 @@ public final class List {
                 System.out.println(l.contains(
                     Integer.parseInt(tokens[1])));
                 break;
+            default:
+                break;    
             }
         }
     }
