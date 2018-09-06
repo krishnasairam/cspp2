@@ -298,7 +298,7 @@ public final class List {
         }
         str = str + list[i] + "]";
         if (size == 1 && list[0] == 0) {
-            System.out.println("Invalid Position Exception");
+            str += "\nInvalid Position Exception";
         }
         return str;
     }
