@@ -17,7 +17,7 @@ interface StringListInterface
 /**
 * class StringList.
 */
-public final class StringList implements StringListInterface{
+public final class StringList implements StringListInterface {
 	//Implement all the methods mentioned to build a ListADT
 
     /*
@@ -66,7 +66,7 @@ public final class StringList implements StringListInterface{
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
+     *
      */
 
     // declare a private int size
