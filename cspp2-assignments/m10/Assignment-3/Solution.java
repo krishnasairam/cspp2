@@ -8,13 +8,16 @@ class Student {
     /**
      * string name.
      */
+    private Student(){
+        //function.
+    }
     private String name;
     /**
      * Constructs the object.
      *
      * @param      name  The name.
      */
-    public Student(final String name) {
+    Student(final String name) {
     //A constructor used to initialize the instance variables
         this.name = name;
     }
@@ -44,6 +47,10 @@ class Student {
 
         Student that = (Student) other;
         return this.getName().equals(that.getName());
+    }
+    @Override
+    public int hashCode() {
+        return this.hashCode();
     }
     /**
      * Returns a string representation of the object.
