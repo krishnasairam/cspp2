@@ -14,7 +14,7 @@ class Student {
      *
      * @param      name  The name.
      */
-    public Student(final String name){
+    public Student(final String name) {
     //A constructor used to initialize the instance variables
         this.name = name;
     }
@@ -23,7 +23,8 @@ class Student {
      *
      * @return     The name.
      */
-    public String getName(){//Getter method which returns the value of instance variable
+    public String getName() {
+    //Getter method which returns the value of instance variable
         return this.name;
     }
     /**
@@ -34,7 +35,9 @@ class Student {
      * @return     { description_of_the_return_value }.
      */
     @Override
-    public boolean equals(final Object other) { //This method is to check if two students names are equal or not
+    public boolean equals(final Object other) { 
+    //This method is to check if 
+    //two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
         }
@@ -64,7 +67,6 @@ public final class Solution {
         // create an object of the list to invoke methods on it
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         String objectType = stdin.nextLine();
-
         switch (objectType) {
         case "S"://This case will be executed for String type list
             List<String> listString = new List();
@@ -119,7 +121,6 @@ public final class Solution {
                 }
             }
             break;
-
         case "I"://This case will be executed for Integer type list
             List<Integer> listInteger = new List();
             while (stdin.hasNext()) {
