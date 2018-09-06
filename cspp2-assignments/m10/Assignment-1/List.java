@@ -1,7 +1,9 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-
-public class List {
+/**
+ * List of .
+ */
+public final class List {
 	//Implement all the methods mentioned to build a ListADT
 
 	/*
@@ -30,7 +32,9 @@ public class List {
 	// don't create the array yet using new
 	// that's the job of the List constructor
 	private int[] list;
-
+	/**
+	 * list.
+	 */
 	/*
 	 * What are the other class variables needed for creating a list?
 	 * How about keeping track of the size of the list?
@@ -55,14 +59,16 @@ public class List {
 	// again, don't initialize it here
 	// variable initialization should be done in the constructor
 	private int size;
-
+    /**
+     * size.
+     */
 	/*
 	 * The purpose of the constructor is to initialize the
 	 * class variables with some default values.
 	 */
-
-
-
+    /**
+     * Constructs the object.
+     */
 	public List() {
 
 		// what are the two variables to be initialized here?
@@ -71,7 +77,7 @@ public class List {
 		// In the case of the list, it should be empty but
 		// it should be initialized with an array size like 10
 		list = new int[10];
-
+      
 		// Think about the initial value for size.
 		// How many items do we have in the list when you create it?
 		// An empty list has how many items?
@@ -93,6 +99,11 @@ public class List {
 	 * constructor.
 	 *
 	 */
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      capacity  The capacity.
+	 */
 	public List(int capacity) {
 		size = 0;
 		list = new int[capacity];
@@ -109,6 +120,11 @@ public class List {
 	 *
 	 * The method returns void (nothing)
 	 */
+	/**
+	 * add.
+	 *
+	 * @param      item  The item.
+	 */
 	public void add(int item) {
         //Inserts the specified element at the end of the list.
         if (size == list.length) {
@@ -116,7 +132,9 @@ public class List {
         }
         list[size++] = item;  
     }
-
+    /**
+     * resize.
+     */
     public void resize() {
     int resizefactor = 2;    
     int[] temp = new int[resizefactor*size];
@@ -166,6 +184,11 @@ public class List {
 	 *
 	 * The method returns an int. Empty list should return 0.
 	 */
+	/**
+	 * size.
+	 *
+	 * @return     { description_of_the_return_value }.
+	 */
 	public int size() {
 		return size;
 	}
@@ -190,7 +213,11 @@ public class List {
 	 * array = [1,3,0,0,0,0,0,0,0,0]
 	 * The method returns void (nothing)
 	 */
-
+    /**
+     * remove.
+     *
+     * @param      index  The index.
+     */
 	public void remove(int index) {
 		// write the logic for remove here.
 		// Think about what to do to the size variable.
@@ -214,6 +241,13 @@ public class List {
 	 * in the list then that would mean the item doesn't exist.
 	 * How do we check if the position is greater than the
 	 * number of items in the list? Would size variable be useful?
+	 */
+	/**
+	 * get.
+	 *
+	 * @param      index  The index.
+	 *
+	 * @return     { description_of_the_return_value }.
 	 */
 	public int get(int index) {
 		if (index < 0 || index >= size) {
@@ -243,6 +277,11 @@ public class List {
 	 * not all the elements of the array.
 	 *
 	 */
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
 		if (size == 0)
 			return "[]";
@@ -261,6 +300,13 @@ public class List {
 	 * So, iterate through the list and return true if
 	 * the item exists and otherwise false
 	 */
+	/**
+	 * contains.
+	 *
+	 * @param      item  The item.
+	 *
+	 * @return     { description_of_the_return_value }.
+	 */
 	public boolean contains(int item) {
 		return indexOf(item) != -1;
 	}
@@ -269,6 +315,13 @@ public class List {
 	 * Returns the index of the first occurrence
 	 * of the specified element in this list,
 	 * or -1 if this list does not contain the element.
+	 */
+	/**
+	 * Searches for the first match.
+	 *
+	 * @param      item  The item.
+	 *
+	 * @return     { description_of_the_return_value }.
 	 */
 	public int indexOf(int item) {
 		for (int i = 0; i < size; i++) {
@@ -279,6 +332,9 @@ public class List {
 	}
 	/*Inserts all the elements of specified int
 	 array to the end of list*/
+	/**
+	 * addAll.
+	 */
 	public void addAll(int items[]) {
     	for (int a:items) {
     		add(a);
@@ -290,6 +346,12 @@ public class List {
 	by moving all the elements to the right.
 	       The method returns void (nothing)
 	    */
+	/**
+	 * add.
+	 *
+	 * @param      index  The index.
+	 * @param      item   The item.
+	 */
 	public void add(int index, int item) {
 		if (index >=0) {
 			for (int i = size-1; i >= index ; i--) {
@@ -303,6 +365,13 @@ public class List {
 	}
 
 	/* Returns the count of occurances of a given item in the list*/
+	/**
+	 * count.
+	 *
+	 * @param      item  The item.
+	 *
+	 * @return     { description_of_the_return_value }.
+	 */
 	public int count(int item) {
 		int count = 0;
 		for (int i = 0; i < size; i++) {
@@ -311,7 +380,12 @@ public class List {
 		}	
 		return count;
 	}
-	public static void main(String[] args) {
+	/**
+	 * main.
+	 *
+	 * @param      args  The arguments.
+	 */
+	public static void main(final String[] args) {
 		// create an object of the list to invoke methods on it
 		List l = new List();
 
