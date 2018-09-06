@@ -328,7 +328,7 @@ public final class Solution {
                     System.out.println(listDouble.size());
                     break;
                 case "print":
-                    // print the list (implement toString 
+                    // print the list (implement toString
                     // in StringList class
                     //for this to work)
                     // expected format is [item-1,item-2,...,item-n]
@@ -357,7 +357,7 @@ public final class Solution {
             break;
 
         case "O":
-        //This case will be executed for Student 
+        //This case will be executed for Student
         //type list i.e to store List of Student Objects
             List<Student> listStudent = new List();
             while (stdin.hasNext()) {
@@ -365,7 +365,7 @@ public final class Solution {
                 String line = stdin.nextLine();
                 // split the line using space
                 String[] tokens = line.split(" ");
-                // based on the list operation invoke the 
+                // based on the list operation invoke the
                 //corresponding method
                 switch (tokens[0]) {
                 case "add":
