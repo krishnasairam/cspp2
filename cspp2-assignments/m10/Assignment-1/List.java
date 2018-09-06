@@ -279,8 +279,8 @@ public class List {
 	       The method returns void (nothing)
 	    */
 	public void add(int index, int item) {
-		for (int i = index + 1; i < size ; i++) {
-				list[i] = list[i - 1];
+		for (int i = size-1; i >= index ; i--) {
+				list[i+1] = list[i];
 		}
 		list[index] = item;
 		size++;
