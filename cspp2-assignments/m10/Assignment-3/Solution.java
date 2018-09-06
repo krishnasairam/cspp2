@@ -8,7 +8,7 @@ class Student {
     /**
      * string name.
      */
-    private Student(){
+    private Student() {
         //function.
     }
     private String name;
