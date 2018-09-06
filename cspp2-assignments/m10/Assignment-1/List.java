@@ -69,7 +69,7 @@ public final class List {
      /**
      * magic number.
      */
-    private final int a = 10;
+    private final int x = 10;
     /**
      * Constructs the object.
      */
@@ -80,7 +80,7 @@ public final class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        list = new int[a];
+        list = new int[x];
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
@@ -166,7 +166,7 @@ public final class List {
      * with the contents of the original array.
      *
      * TODO
-     * Create a method called resize(). 
+     * Create a method called resize().
      * Resize should create an new array that is
      * double the size of the old array.
      * Then copy the contents of the old array to the new one.
@@ -175,7 +175,7 @@ public final class List {
      * Will the client invoke resize or is it internal to List class?
      * Should the resize be public method or private?
      * Should the resize method return any values?
-     * You know enough of Object Oriented 
+     * You know enough of Object Oriented
      * Programming to answer these questions :-)
      *
      */
@@ -464,7 +464,7 @@ public final class List {
                     Integer.parseInt(tokens[1])));
                 break;
             default:
-                break;    
+                break;
             }
         }
     }
