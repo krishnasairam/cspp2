@@ -78,7 +78,7 @@ public final class Solution {
     /**
      * dmethod.
      *
-     * @param      args  The arguments.
+     * @param      stdin  The stdin
      */
     static void dmethod(final Scanner stdin) {
         List<Double> listDouble = new List();
@@ -468,6 +468,8 @@ public final class Solution {
         }
     }
 }
+
+
 
 
 
