@@ -342,7 +342,7 @@ public class List {
 				// print the list (implement toString for this to work)
 				// expected format is [item-1,item-2,...,item-n]
 				// review the output testcase file
-				System.out.println(l);
+				System.out.println(l.toString());
 				break;
 			case "remove":
 				l.remove(Integer.parseInt(tokens[1]));
