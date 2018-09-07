@@ -310,7 +310,8 @@ and also if start is greater than end.
  */
 public List subList(final int start, final int end) {
     // write the logic for subList
-    if (start >= 0 && end >= 0 && start <= end) {
+    if (start >= 0 && start < size && end <= size 
+        && end >= 0 && start <= end) {
         List lee = new List();
         for (int i = start; i < end; i++) {
             lee.add(list[i]);
