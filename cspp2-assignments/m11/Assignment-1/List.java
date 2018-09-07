@@ -248,8 +248,6 @@ public void addAll(int[] newArray) {
 */
 public void removeAll(int[] newArray) {
 	for (int each : newArray) {
-		//System.out.println(a);
-		//remove(indexOf(a));
 		for (int i = 0; i < size; i++) {
 			if (each == list[i]) {
 				remove(i);
@@ -282,12 +280,15 @@ exactly matching with the given list or not.
 */
 public boolean equals(List lis) {
 	int count = 0;
-	for (int i = 0; i < lis.size(); i++) {
-		if (list[i] != lis.get(i)) {
-			return false;
-		}
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < lis.size(); j++) {
+			if (list[i] == lis.get(j)) {
+				count++;
+			}
+		}	
 	}
-	return true;
+	return (count == lis.size());
+
 }
 /*
 * Removes all the elements from list
