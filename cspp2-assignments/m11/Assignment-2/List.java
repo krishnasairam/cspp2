@@ -214,9 +214,7 @@ public class List<E> {
             if (list[i].equals(listdata.get(i))) {
                 count +=1;
             }
-        } if (count == listdata.size()) {
-            return true;
-        } return false;
+        } return (count == listdata.size());
     }
     /*Removes all the elements from list*/
     public void clear() {
