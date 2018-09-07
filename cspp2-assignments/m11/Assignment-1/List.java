@@ -276,7 +276,7 @@ exactly matching with the given list or not.
 */
 public boolean equals(List lis) {
 	for (int i = 0; i < size; i++) {
-		if (list[i] != get(i)) {
+		if (list[i] != lis.get(i)) {
 			return false;
 		}
 	} return true;
