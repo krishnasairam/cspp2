@@ -247,8 +247,14 @@ public void addAll(int[] newArray) {
  array.
 */
 public void removeAll(int[] newArray) {
-	for (int a : newArray) {
-		remove(indexOf(a));
+	for (int each : newArray) {
+		//System.out.println(a);
+		//remove(indexOf(a));
+		for (int i = 0; i < size; i++) {
+			if (each == list[i]) {
+				remove(i);
+			}
+		} 
 	}
 
 }
@@ -264,7 +270,7 @@ public List subList(int start, int end) {
 	if (start >= 0 && end >= 0 && start <= end) {
 		List lee = new List();
 		for (int i = start; i < end; i++) {
-		lee.add(list[i]);
+			lee.add(list[i]);
 		} return lee;
 	}
 	System.out.println("Index Out of Bounds Exception");
@@ -276,16 +282,12 @@ exactly matching with the given list or not.
 */
 public boolean equals(List lis) {
 	int count = 0;
-	for (int i = 0; i < size; i++) {
-		for (int j = 0; j < size; j++) {
-			if (list[i] == lis.get(j)) {
-				count = count + 1;
-			}
+	for (int i = 0; i < lis.size(); i++) {
+		if (list[i] != lis.get(i)) {
+			return false;
 		}
-	}	
-	if (size == lis.size() && count == lis.size()) {
-		return true;
-	} return false;
+	}
+	return true;
 }
 /*
 * Removes all the elements from list
