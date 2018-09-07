@@ -310,7 +310,7 @@ and also if start is greater than end.
  */
 public List subList(final int start, final int end) {
     // write the logic for subList
-    if (start >= 0 && start < size && end <= size 
+    if (start >= 0 && start < size && end <= size
         && end >= 0 && start <= end) {
         List lee = new List();
         for (int i = start; i < end; i++) {
@@ -425,7 +425,7 @@ public static void main(final String[] args) {
                 l.removeAll(a);
             }
             break;
-        case "subList": {
+        case "subList": 
             if (tokens.length != 2) {
                 break;
             }
@@ -436,7 +436,6 @@ public static void main(final String[] args) {
                 System.out.println(object);
             }
             break;
-        }
         case "equals":
             if (tokens.length == 2) {
                 String[] lt = tokens[1].split(",");
@@ -456,3 +455,4 @@ public static void main(final String[] args) {
     }
 }
 }
+
