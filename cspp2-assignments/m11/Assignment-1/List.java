@@ -90,11 +90,11 @@ public class List {
     }
 
     /*
-     * The add method does what the name suggests. 
+     * The add method does what the name suggests.
      * Add an int item to the list.
-     * The assumption is to store the item at 
+     * The assumption is to store the item at
      * the end of the list What is the
-     * end of the list? Is it the same as the 
+     * end of the list? Is it the same as the
      * end of the array? Think about how
      * you can use the size variable to add item to the list.
      *
