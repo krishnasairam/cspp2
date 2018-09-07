@@ -425,7 +425,7 @@ public static void main(final String[] args) {
                 l.removeAll(a);
             }
             break;
-        case "subList": 
+        case "subList":
             if (tokens.length != 2) {
                 break;
             }
@@ -455,5 +455,6 @@ public static void main(final String[] args) {
     }
 }
 }
+
 
 
