@@ -248,7 +248,7 @@ public void addAll(int[] newArray) {
 */
 public void removeAll(int[] newArray) {
 	for (int a : newArray) {
-		remove(a);
+		remove(indexOf(a));
 	}
 
 }
