@@ -285,9 +285,9 @@ public void addAll(final int[] newArray) {
   */
 public void removeAll(final int[] newArray) {
     for (int each : newArray) {
-        for (int i = 0; i < size; i++) {
-            if (each == list[i]) {
-                remove(i);
+        for (int i = 0; i < newArray.length; i++) {
+            if (contains(each)) {
+                remove(indexOf(each));
             }
         }
     }
