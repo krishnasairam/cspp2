@@ -209,11 +209,14 @@ public class List<E> {
       i.e a List object is exactly matching with the given list or not.
      */
     public boolean equals(List<E> listdata) {
+        int count = 0;
         for (int i = 0; i < size; i++) {
-            if (list[i] != listdata.get(i)) {
-                return false;
+            if (list[i].equals(listdata.get(i))) {
+                count +=1;
             }
-        } return true;
+        } if (count == listdata.size()) {
+            return true;
+        } return false;
     }
     /*Removes all the elements from list*/
     public void clear() {
