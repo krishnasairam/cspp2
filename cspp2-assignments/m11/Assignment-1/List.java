@@ -261,11 +261,14 @@ and also if start is greater than end.
 */
 public List subList(int start, int end) {
 	// write the logic for subList
-	List lee = new List();
-	for (int i = start; i < end; i++) {
+	if (start >= 0 && end >= 0 && start <= end) {
+		List lee = new List();
+		for (int i = start; i < end; i++) {
 		lee.add(list[i]);
+		} return lee;
 	}
-	return lee;
+	System.out.println("Index Out of Bounds Exception");
+	return null;
 }
 /*
 Returns a boolean indicating whether the parameter i.e a List object is
@@ -285,9 +288,7 @@ public boolean equals(List lis) {
 */
 public void clear() {
 	// write the logic for clear.
-	for (int a : list) {
-		remove(a);
-	}
+	removeAll(list);
 }
 
 public static void main(String[] args) {
