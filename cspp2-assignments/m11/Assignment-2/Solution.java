@@ -16,9 +16,9 @@ class Student {
      *
      * @param      name  The name.
      */
-    public Student(final String name) {
+    Student(final String name1) {
     //A constructor used to initialize the instance variables
-        this.name = name;
+        this.name = name1;
     }
     /**
      * Gets the name.
@@ -37,7 +37,7 @@ class Student {
      * @return     { description_of_the_return_value }.
      */
     @Override
-    public boolean equals(Object other) {
+    public boolean equals(final Object other) {
     //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
@@ -46,6 +46,11 @@ class Student {
         Student that = (Student) other;
         return this.getName().equals(that.getName());
     }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int hashCode() {
         return this.hashCode();
     }
@@ -61,6 +66,12 @@ class Student {
 
 public final class Solution {
 
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Empty.
+    }
     /**
      * { function_description }.
      *
@@ -123,13 +134,16 @@ public final class Solution {
                 if (tokens.length == 2) {
                     String[] t2 = tokens[1].split(",");
                     Integer[] a = new Integer[t2.length];
-                    for (int i = 0; i < t2.length; i++)
+                    for (int i = 0; i < t2.length; i++) {
                         a[i] = Integer.parseInt(t2[i]);
+                    }
                     l.removeAll(a);
                 }
                 break;
             case "subList": {
-                if (tokens.length != 2) break;
+                if (tokens.length != 2) {
+                    break;
+                }
                 String[] arrstring3 = tokens[1].split(",");
                 List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
                 if (object != null)
