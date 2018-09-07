@@ -262,7 +262,7 @@ and also if start is greater than end.
 public List subList(int start, int end) {
 	// write the logic for subList
 	List lee = new List();
-	for (int i = start; i <= end; i++) {
+	for (int i = start; i < end; i++) {
 		lee.add(list[i]);
 	}
 	return lee;
