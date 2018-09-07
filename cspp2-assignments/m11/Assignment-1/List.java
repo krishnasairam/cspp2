@@ -275,11 +275,17 @@ Returns a boolean indicating whether the parameter i.e a List object is
 exactly matching with the given list or not.
 */
 public boolean equals(List lis) {
+	int count = 0;
 	for (int i = 0; i < size; i++) {
-		if (list[i] != lis.get(i)) {
-			return false;
+		for (int j = 0; j < size; j++) {
+			if (list[i] == lis.get(j)) {
+				count = count + 1;
+			}
 		}
-	} return true;
+	}	
+	if (size == lis.size() && count == lis.size()) {
+		return true;
+	} return false;
 }
 /*
 * Removes all the elements from list
