@@ -146,9 +146,9 @@ class Set {
 	public int[][] cartesianProduct(Set t) {
 		int[][] carray = new int[size * t.size()][2];
 		System.out.println(t.get(1));
-		for (int i = 0; i < this.size(); i++) {
-			for (int k = 0; k<t.size(); k++) {
-				for (int s = 0;s < carray.length; s++) {
+		for (int s = 0; s < carray.length; s++) {
+			for (int i = 0; i < this.size(); i++) {
+				for (int k = 0; k < t.size(); k++) {
 					carray[s][0] = set[i];
 					carray[s][1] = t.get(k);
 				}
