@@ -73,12 +73,12 @@ class Set {
 	 * @param      item  The item.
 	 */
 	public void add(final int item) {
-		if (contains(item)) {
+		if (contains(item) == false) {
+			if (size == set.length) {
+				resize();
+			}
+			set[size++] = item;
 		}
-		else if (size == set.length) {
-			resize();
-		}
-		set[size++] = item;
 	}
 	/**
 	 * resize.
