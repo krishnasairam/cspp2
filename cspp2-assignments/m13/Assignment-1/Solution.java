@@ -15,7 +15,7 @@ class Set {
 	 * size.
 	 */
 	private int size;
-	private int x = 10;
+	private final int x = 10;
 	/**
 	 * Constructs the object.
 	 */
