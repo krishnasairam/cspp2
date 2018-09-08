@@ -127,10 +127,10 @@ class Set {
 	 */
 	public Set retainAll(int[] array) {
 		Set retainAll = new Set();
-		for (int i = 0; i < array.length; i++) {
-			for (int j = 0; j < size; j++) {
-				if (set[j] == array[i]) {
-					retainAll.add(set[j]);
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < array.length; j++) {
+				if (set[i] == array[j]) {
+					retainAll.add(set[i]);
 				}
 			}
 		} return retainAll;
@@ -144,8 +144,8 @@ class Set {
 	 */
 	public int[][] cartesianProduct(Set u) {
 		int[][] array = new int[size * u.size()][2];
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < array.length; j++) {
+		for (int j = 0; j < array.length; j++) {
+			for (int i = 0; i < size; i++) {
 				for (int k = 0; k < u.size; k++) {
 					array[j][0] = set[i];
 					array[j][1] = u.get(k);
