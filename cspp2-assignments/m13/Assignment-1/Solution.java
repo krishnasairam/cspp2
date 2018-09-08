@@ -52,7 +52,7 @@ class Set {
 		String str = "{";
 		int i = 0;
 		for (i = 0; i < size - 1; i++) {
-			str = str + set[i] + ",";
+			str = str + set[i] + ", ";
 		}
 		str = str + set[i] + "}";
 		return str;
@@ -73,10 +73,12 @@ class Set {
 	 * @param      item  The item.
 	 */
 	public void add(int item) {
-		if (size == set.length) {
-			resize();
+		if (contains(item) == false) {
+			if (size == set.length) {
+				resize();
+			}
+			set[size++] = item;
 		}
-		set[size++] = item;
 	}
 	/**
 	 * resize.
