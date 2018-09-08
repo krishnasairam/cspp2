@@ -7,13 +7,20 @@ import java.util.Arrays;
  * @author : sairam.
  */
 class Set {
+	/**
+	 * set.
+	 */
 	private int[] set;
+	/**
+	 * size.
+	 */
 	private int size;
+	private int x = 10;
 	/**
 	 * Constructs the object.
 	 */
 	public Set() {
-		set = new int[10];
+		set = new int[x];
 		size = 0;
 	}
 	/**
@@ -31,10 +38,10 @@ class Set {
 	 *
 	 * @return     true or false.
 	 */
-	public boolean contains(int item) {
+	public boolean contains(final int item) {
 		boolean checkFlag = false;
 		for (int i = 0; i < size; i++) {
-			if (set [i] == item) {
+			if (set[i] == item) {
 				checkFlag = true;
 			}
 		}
@@ -62,7 +69,7 @@ class Set {
 	 *
 	 * @param      newArray  The new array.
 	 */
-	public void add(int[] newArray) {
+	public void add(final int[] newArray) {
 		for (int a : newArray) {
 			add(a);
 		}
