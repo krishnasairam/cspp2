@@ -47,7 +47,7 @@ class Set {
 	 */
 	public String toString() {
 		if (size == 0) {
-			return "{}";
+			return null;
 		}
 		String str = "{";
 		int i = 0;
@@ -145,8 +145,8 @@ class Set {
 	public int[][] cartesianProduct(Set u) {
 		int[][] array = new int[size * u.size()][2];
 		for (int i = 0; i < size; i++) {
-			for (int k = 0; k < u.size; k++) {
-				for (int j = 0; j < array.length; j++) {
+			for (int j = 0; j < array.length; j++) {
+				for (int k = 0; k < u.size; k++) {
 					array[j][0] = set[i];
 					array[j][1] = u.get(k);
 				}
