@@ -110,10 +110,10 @@ class Set {
 	 */
 	public Set intersection(Set t) {
 		Set intersection = new Set();
-		for (int i = 0; i < t.size(); i++) {
-			for (int j = 0; j < size; j++) {
-				if (set[j] == t.get(i)) {
-					intersection.add(set[j]);
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < t.size(); j++) {
+				if (set[i] == t.get(j)) {
+					intersection.add(set[i]);
 				}
 			}
 		} return intersection;
@@ -144,9 +144,9 @@ class Set {
 	 */
 	public int[][] cartesianProduct(Set u) {
 		int[][] array = new int[size * u.size()][2];
-		for (int j = 0; j < array.length; j++) {
-			for (int i = 0; i < size; i++) {
-				for (int k = 0; k < u.size; k++) {
+		for (int i = 0; i < size; i++) {
+			for (int k = 0; k < u.size; k++) {
+				for (int j = 0; j < array.length; j++) {
 					array[j][0] = set[i];
 					array[j][1] = u.get(k);
 				}
