@@ -141,10 +141,10 @@ class Set {
 	 * @return     2d array.
 	 */
 	public int[][] cartesianProduct(Set u) {
-		int[][] array = new int[2][size];
+		int[][] array = new int[size][2];
 		for (int i = 0; i < size; i++) {
-			array[0][i] = set[i];
-			array[1][i] = u.get(i);
+			array[i][0] = set[i];
+			array[i][1] = u.get(i);
 		} return array;
 	}
 }
