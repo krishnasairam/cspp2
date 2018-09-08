@@ -72,13 +72,13 @@ class Set {
 	 *
 	 * @param      item  The item.
 	 */
-	public void add(int item) {
-		if (contains(item) == false) {
-			if (size == set.length) {
-				resize();
-			}
-			set[size++] = item;
+	public void add(final int item) {
+		if (contains(item)) {
 		}
+		else if (size == set.length) {
+			resize();
+		}
+		set[size++] = item;
 	}
 	/**
 	 * resize.
@@ -108,7 +108,7 @@ class Set {
 	 *
 	 * @return     intersection set.
 	 */
-	public Set intersection(Set t) {
+	public Set intersection(final Set t) {
 		Set intersection = new Set();
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < t.size(); j++) {
@@ -125,7 +125,7 @@ class Set {
 	 *
 	 * @return     retainAll set.
 	 */
-	public Set retainAll(int[] array) {
+	public Set retainAll(final int[] array) {
 		Set retainAll = new Set();
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < array.length; j++) {
@@ -138,12 +138,12 @@ class Set {
 	/**
 	 * cartesianProduct.
 	 *
-	 * @param      u     set.
+	 * @param      t     set.
 	 *
 	 * @return     2d array.
 	 */
 
-	public int[][] cartesianProduct(Set t) {
+	public int[][] cartesianProduct(final Set t) {
 		int[][] carray = new int[size * t.size()][2];
 		System.out.println(t.get(1));
 		for (int s = 0; s < carray.length; s++) {
@@ -201,13 +201,15 @@ public final class Solution {
 			String line = stdin.nextLine();
 			// split the line using space
 			String[] tokens = line.split(" ");
-			// based on the list operation invoke the corresponding method
+			// based on the list operation
+			// invoke the corresponding method
 			switch (tokens[0]) {
 			case "size":
 				System.out.println(s.size());
 				break;
 			case "contains":
-				System.out.println(s.contains(Integer.parseInt(tokens[1])));
+				System.out.println(s.
+					contains(Integer.parseInt(tokens[1])));
 				break;
 			case "print":
 				System.out.println(s);
@@ -243,7 +245,8 @@ public final class Solution {
 				s.add(intArray);
 				intArray = intArray(tokens[2]);
 				t.add(intArray);
-				System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
+				System.out.println(Arrays.
+					deepToString(s.cartesianProduct(t)));
 				break;
 			default:
 				break;
