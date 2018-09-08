@@ -142,13 +142,15 @@ class Set {
 	 *
 	 * @return     2d array.
 	 */
+
 	public int[][] cartesianProduct(Set t) {
-		int[][] carray = new int[this.size() * t.size()][2];
+		int[][] carray = new int[size * t.size()][2];
+		System.out.println(t.get(1));
 		for (int i = 0; i < this.size(); i++) {
-			for (int j = 0; j < carray.length; j++) {
-				for (int k = 0; k < t.size; k++) {
-					carray[j][0] = this.get(i);
-					carray[j][1] = t.get(k);
+			for (int k = 0; k<t.size(); k++) {
+				for (int s = 0;s < carray.length; s++) {
+					carray[s][0] = set[i];
+					carray[s][1] = t.get(k);
 				}
 			}
 		} return carray;
