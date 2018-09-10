@@ -114,11 +114,16 @@ class Set {
     }
     /**
      * subset.
+     *
+     * @param      fromElement  The from element.
+     * @param      toElement    To element.
+     *
+     * @return     { description_of_the_return_value }.
      */
     public int[] subSet(final int fromElement, final  int toElement) {
         int[] temp = new int[x];
         int s = 0;
-        for (int i = 0;i < size; i++) {
+        for (int i = 0; i < size; i++) {
             if (set[i] >= fromElement && set[i] < toElement) {
                 temp[s++] = set[i];
             }
@@ -128,11 +133,15 @@ class Set {
     }
     /**
      * headset.
+     *
+     * @param      toElement  To element.
+     *
+     * @return     { description_of_the_return_value }.
      */
     public int[] headSet(final int toElement) {
         int[] temp = new int[x];
         int s = 0;
-        for (int i = 0;i < size; i++) {
+        for (int i = 0; i < size; i++) {
             if (set[i] < toElement) {
                 temp[s++] = set[i];
             }
@@ -142,13 +151,16 @@ class Set {
     }
     /**
      * last.
+     *
+     * @return     last value.
      */
     public int last() {
-    if (size !=0) {
-        return set[size-1];
-    } System.out.println("Set Empty Exception");
+    if (size != 0) {
+        return set[size - 1];
+    }
+    System.out.println("Set Empty Exception");
     return -1;
-}
+    }
 }
     /**
      * sorted set.
@@ -221,7 +233,8 @@ public final class Solution {
                 break;
             case "subSet":
                 String[] arrstring = tokens[1].split(",");
-                if(Integer.parseInt(arrstring[0]) >Integer.parseInt(arrstring[1])) {
+                if (Integer.parseInt(arrstring[0]) >
+                      Integer.parseInt(arrstring[1])) {
                     System.out.println("Invalid Arguments to Subset Exception");
                 } else {
                     int[] subarray = s.subSet(Integer.parseInt(arrstring[0]),
