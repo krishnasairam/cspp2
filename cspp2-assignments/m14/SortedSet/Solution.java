@@ -115,22 +115,22 @@ class Set {
      * subset.
      */
     public int[] subSet(final int fromElement, final  int toElement) {
-        int[] temp = new int[toElement - fromElement];
+        int[] temp = new int[x];
         int s = 0;
-        for (int a : set) {
-            if (a >= fromElement && a < toElement)
-                temp[s++] = a;
+        for (int i = 0;i < size; i++) {
+            if (set[i] >= fromElement && set[i] < toElement)
+                temp[s++] = set[i];
         } return temp;
     }
     /**
      * headset.
      */
     public int[] headSet(final int toElement) {
-        int[] temp = new int[toElement - set[0]];
+        int[] temp = new int[x];
         int s = 0;
-        for (int a : set) {
-            if (a < toElement)
-                temp[s++] = a;
+        for (int i = 0;i < size; i++) {
+            if (set[i] < toElement)
+                temp[s++] = set[i];
         } return temp;
     }
     /**
