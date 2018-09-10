@@ -122,7 +122,7 @@ class Set {
                 temp[s++] = set[i];
             }
         }
-        temp = Arrays.copyOf(temp, size);
+        temp = Arrays.copyOf(temp, s);
         return temp;
     }
     /**
