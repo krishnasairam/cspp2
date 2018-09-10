@@ -72,10 +72,10 @@ class Set {
      * @param      newArray  The new array.
      */
     public void addAll(final int[] newArray) {
-        Arrays.sort(newArray);
         for (int a : newArray) {
             add(a);
         }
+        set = Arrays.copyOf(set, size);
         Arrays.sort(set);
     }
     /**
