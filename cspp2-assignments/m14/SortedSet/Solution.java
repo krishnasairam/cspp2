@@ -117,7 +117,7 @@ class Set {
     public int[] subSet(final int fromElement, final  int toElement) {
         int[] temp = new int[x];
         int s = 0;
-        for (int i = 0;i < size; i++) {
+        for (int i = 0;i < size - 1; i++) {
             if (set[i] >= fromElement && set[i] < toElement)
                 temp[s++] = set[i];
         } return temp;
