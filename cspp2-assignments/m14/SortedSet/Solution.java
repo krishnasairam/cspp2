@@ -76,6 +76,7 @@ class Set {
         for (int a : newArray) {
             add(a);
         }
+        Arrays.sort(set);
     }
     /**
      * add.
