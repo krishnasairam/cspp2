@@ -143,8 +143,10 @@ class Set {
      * last.
      */
     public int last() {
+    if (size !=0) {
         return set[size-1];
-    }
+    } return -1;
+}
 }
     /**
      * sorted set.
@@ -238,7 +240,11 @@ public final class Solution {
                 }
                 break;
             case "last":
-                System.out.println(s.last());
+                if (s.last() != -1) {
+                    System.out.println(s.last());
+                } else {
+                System.out.println("Set Empty Exception");
+                }
                 break;
             default:
                 break;
