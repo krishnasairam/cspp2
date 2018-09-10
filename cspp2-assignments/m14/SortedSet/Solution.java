@@ -115,18 +115,15 @@ class Set {
      * subset.
      */
     public int[] subSet(final int fromElement, final  int toElement) {
-        if (fromElement <= toElement) {
-            int[] temp = new int[x];
-            int s = 0;
-            for (int i = 0;i < size; i++) {
-                if (set[i] >= fromElement && set[i] < toElement) {
-                    temp[s++] = set[i];
-                }
+        int[] temp = new int[x];
+        int s = 0;
+        for (int i = 0;i < size; i++) {
+            if (set[i] >= fromElement && set[i] < toElement) {
+                temp[s++] = set[i];
             }
-            temp = Arrays.copyOf(temp, s);
-            return temp;
-        } System.out.println("Invalid Arguments to Subset Exception");
-        return null;
+        }
+        temp = Arrays.copyOf(temp, s);
+        return temp;
     }
     /**
      * headset.
@@ -220,12 +217,16 @@ public final class Solution {
                 break;
             case "subSet":
                 String[] arrstring = tokens[1].split(",");
-                int[] subarray = s.subSet(Integer.parseInt(arrstring[0]),
+                if(Integer.parseInt(arrstring[0]) >Integer.parseInt(arrstring[1])) {
+                    System.out.println("Invalid Arguments to Subset Exception");
+                } else {
+                    int[] subarray = s.subSet(Integer.parseInt(arrstring[0]),
                             Integer.parseInt(arrstring[1]));
-                Set subset = new Set();
-                subset.addAll(subarray);
-                if (subset != null) {
-                    System.out.println(subset);
+                    Set subset = new Set();
+                    subset.addAll(subarray);
+                    if (subset != null) {
+                        System.out.println(subset);
+                    }
                 }
                 break;
             case "headSet":
