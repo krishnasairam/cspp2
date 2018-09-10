@@ -146,7 +146,8 @@ class Set {
     public int last() {
     if (size !=0) {
         return set[size-1];
-    } return -1;
+    } System.out.println("Set Empty Exception");
+    return -1;
 }
 }
     /**
@@ -241,11 +242,7 @@ public final class Solution {
                 }
                 break;
             case "last":
-                if (s.last() != -1) {
-                    System.out.println(s.last());
-                } else {
-                System.out.println("Set Empty Exception");
-                }
+                System.out.println(s.last());
                 break;
             default:
                 break;
