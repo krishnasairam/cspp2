@@ -118,7 +118,7 @@ class Set {
         int[] temp = new int[x];
         int s = 0;
         for (int i = 0;i < size - 1; i++) {
-            if (set[i] >= fromElement && set[i] < toElement)
+            if (set[i] >= fromElement && set[i] < toElement && set[i] != 0)
                 temp[s++] = set[i];
         } return temp;
     }
@@ -210,9 +210,6 @@ public final class Solution {
                 }
                 break;
             case "subSet":
-                if (tokens.length != 2) {
-                break;
-                }
                 String[] arrstring = tokens[1].split(",");
                 int[] subarray = s.subSet(Integer.parseInt(arrstring[0]),
                             Integer.parseInt(arrstring[1]));
@@ -221,6 +218,7 @@ public final class Solution {
                 if (subset != null) {
                     System.out.println(subset);
                 }
+                break;
             case "headSet":
                 int[] headarray = s.headSet(Integer.parseInt(tokens[1]));
                 Set headset = new Set();
