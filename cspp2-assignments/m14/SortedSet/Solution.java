@@ -21,7 +21,7 @@ class Set {
     /**
      * Constructs the object.
      */
-    public Set() {
+    Set() {
         set = new int[x];
         size = 0;
     }
@@ -233,8 +233,8 @@ public final class Solution {
                 break;
             case "subSet":
                 String[] arrstring = tokens[1].split(",");
-                if (Integer.parseInt(arrstring[0]) >
-                      Integer.parseInt(arrstring[1])) {
+                if (Integer.parseInt(arrstring[0])
+                      > Integer.parseInt(arrstring[1])) {
                     System.out.println("Invalid Arguments to Subset Exception");
                 } else {
                     int[] subarray = s.subSet(Integer.parseInt(arrstring[0]),
