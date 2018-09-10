@@ -5,7 +5,7 @@ import java.util.Arrays;
  * Class for set.
  * @author : sairam.
  */
-class Set{
+class Set {
     /**
      * set.
      */
@@ -75,7 +75,6 @@ class Set{
         for (int a : newArray) {
             add(a);
         }
-        Arrays.sort(set);
     }
     /**
      * add.
