@@ -317,6 +317,9 @@ public final class Solution {
             case "clear":
                 l.clear();
                 break;
+            case "count":
+                System.out.println(l.count(Integer.parseInt(tokens[1])));
+                break;
             default:
                 break;
             }
