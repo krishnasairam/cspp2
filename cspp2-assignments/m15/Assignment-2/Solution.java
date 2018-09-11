@@ -202,12 +202,8 @@ class SortedSetADT {
                 temp[s++] = set[i];
             }
         }
-        if (s == 0) {
-            return null;
-        } else {
             temp = Arrays.copyOf(temp, s);
             return temp;
-        }
     }
     /**
      * last.
@@ -301,7 +297,7 @@ public final class Solution {
                 int[] headarray = s.headSet(Integer.parseInt(tokens[1]));
                 SortedSetADT headset = new SortedSetADT();
                 headset.addAll(headarray);
-                if (headset != null) {
+                if (headset.size() != 0) {
                     System.out.println(headset);
                 } else {
                     System.out.println("Set Empty Exception");
