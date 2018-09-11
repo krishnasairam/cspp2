@@ -53,11 +53,13 @@ class List {
     public int size() {
         return size;
     }
-    /**
-     * remove.
-     *
-     * @param      index  The index.
-     */
+/**
+ * remove.
+ *
+ * @param      index                      The index
+ *
+ * @throws     IndexOutOfBoundsException  { exception_description }
+ */
     public void remove(final int index) throws IndexOutOfBoundsException {
         try {
             if (index >= 0 && index < size) {
