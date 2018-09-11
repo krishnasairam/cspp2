@@ -202,8 +202,12 @@ class SortedSetADT {
                 temp[s++] = set[i];
             }
         }
-        temp = Arrays.copyOf(temp, s);
-        return temp;
+        if (s == 0) {
+            return null;
+        } else {
+            temp = Arrays.copyOf(temp, s);
+            return temp;
+        }
     }
     /**
      * last.
@@ -299,6 +303,8 @@ public final class Solution {
                 headset.addAll(headarray);
                 if (headset != null) {
                     System.out.println(headset);
+                } else {
+                    System.out.println("Set Empty Exception");
                 }
                 break;
             case "last":
