@@ -113,6 +113,62 @@ class SortedSetADT {
         return set[index];
     }
     /**
+     * intersection.
+     *
+     * @param      t     set.
+     *
+     * @return     intersection set.
+     */
+    public SortedSetADT intersection(final SortedSetADT t) {
+        SortedSetADT intersection = new SortedSetADT();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < t.size(); j++) {
+                if (set[i] == t.get(j)) {
+                    intersection.add(set[i]);
+                }
+            }
+        } return intersection;
+    }
+    /**
+     * retainAll.
+     *
+     * @param      array  The array.
+     *
+     * @return     retainAll set.
+     */
+    public SortedSetADT retainAll(final int[] array) {
+        SortedSetADT retainAll = new SortedSetADT();
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (set[i] == array[j]) {
+                    retainAll.add(set[i]);
+                }
+            }
+        } return retainAll;
+    }
+    /**
+     * cartesianProduct.
+     *
+     * @param      t     set.
+     *
+     * @return     2d array.
+     */
+
+    public int[][] cartesianProduct(final SortedSetADT t) {
+        if (size != 0 && t.size != 0) {
+            int[][] carray = new int[size * t.size()][2];
+            System.out.println(t.get(1));
+            int s = 0;
+            for (int i = 0; i < this.size(); i++) {
+                for (int k = 0; k < t.size(); k++) {
+                    carray[s][0] = set[i];
+                    carray[s][1] = t.get(k);
+                    s++;
+                }
+            } return carray;
+        } return null;
+    }
+    /**
      * subset.
      *
      * @param      fromElement  The from element.
@@ -146,8 +202,13 @@ class SortedSetADT {
                 temp[s++] = set[i];
             }
         }
+        if (s == 0) {
+        System.out.println("Set Empty Exception");
+        return null;
+        } else {
         temp = Arrays.copyOf(temp, s);
         return temp;
+        }
     }
     /**
      * last.
@@ -155,11 +216,9 @@ class SortedSetADT {
      * @return     last value.
      */
     public int last() {
-    if (size != 0) {
+    //try {
         return set[size - 1];
-    }
-    System.out.println("Set Empty Exception");
-    return -1;
+    //System.out.println("Set Empty Exception");
     }
 }
     /**
@@ -249,6 +308,32 @@ public final class Solution {
                 break;
             case "last":
                 System.out.println(s.last());
+                break;
+            case "intersection":
+                s = new SortedSetADT();
+                SortedSetADT t = new SortedSetADT();
+                intArray = intArray(tokens[1]);
+                s.addAll(intArray);
+                intArray = intArray(tokens[2]);
+                t.addAll(intArray);
+                System.out.println(s.intersection(t));
+                break;
+            case "retainAll":
+                s = new SortedSetADT();
+                intArray = intArray(tokens[1]);
+                s.addAll(intArray);
+                intArray = intArray(tokens[2]);
+                System.out.println(s.retainAll(intArray));
+                break;
+            case "cartesianProduct":
+                s = new SortedSetADT();
+                t = new SortedSetADT();
+                intArray = intArray(tokens[1]);
+                s.addAll(intArray);
+                intArray = intArray(tokens[2]);
+                t.addAll(intArray);
+                System.out.println(Arrays.
+                    deepToString(s.cartesianProduct(t)));
                 break;
             default:
                 break;
