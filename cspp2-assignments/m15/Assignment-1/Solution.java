@@ -161,12 +161,18 @@ class List {
         //if (start >= 0 && start < size && end <= size
                 //&& end >= 0 && start <= end) {
         try {
-            List lee = new List();
-            for (int i = start; i < end; i++) {
-                lee.add(list[i]);
-            } return lee;
+            if (end >= 0 && start >= 0) {
+                List lee = new List();
+                for (int i = start; i < end; i++) {
+                    lee.add(list[i]);
+                } return lee;
+            }
+            else {
+                System.out.println("Index Out of Bounds Exception");
+                return null;
+            }
         }
-        catch(Exception e){
+        catch(IndexOutOfBoundsException e){
             System.out.println("Index Out of Bounds Exception");
             return null;
         }
