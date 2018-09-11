@@ -197,6 +197,21 @@ class List {
     public void clear() {
         removeAll(list);
     }
+    /**
+     * { function_description }
+     *
+     * @param      i     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int count(final int item) {
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (item == list[i]) {
+                count++;
+            }
+        } return count;
+    }
 }
 /**
  * Solution class for code-eval.
