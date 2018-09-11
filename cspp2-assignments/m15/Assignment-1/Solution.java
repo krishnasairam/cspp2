@@ -19,7 +19,7 @@ class List {
     /**
      * Constructs the object.
      */
-    public List() {
+    List() {
         list = new int[x];
         size = 0;
     }
@@ -148,15 +148,18 @@ class List {
         }
 
     }
-    /**
-     * sublist.
-     *
-     * @param      start  The start.
-     * @param      end    The end.
-     *
-     * @return     { description_of_the_return_value }.
-     */
-    public List subList(final int start, final int end) throws IndexOutOfBoundsException {
+/**
+ * sublist.
+ *
+ * @param      start                      The start
+ * @param      end                        The end
+ *
+ * @return     { description_of_the_return_value }
+ *
+ * @throws     IndexOutOfBoundsException  { exception_description }
+ */
+    public List subList(final int start, final int end)
+     throws IndexOutOfBoundsException {
         // write the logic for subList
         //if (start >= 0 && start < size && end <= size
                 //&& end >= 0 && start <= end) {
@@ -167,12 +170,10 @@ class List {
                 for (int i = start; i < end; i++) {
                     lee.add(list[i]);
                 } return lee;
-            }
-            else {
+            } else {
                 throw new IndexOutOfBoundsException();
             }
-        }
-        catch(IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         }
@@ -198,9 +199,9 @@ class List {
         removeAll(list);
     }
     /**
-     * { function_description }
+     * count.
      *
-     * @param      i     { parameter_description }
+     * @param      item     { parameter_description }
      *
      * @return     { description_of_the_return_value }
      */
