@@ -156,20 +156,20 @@ class List {
      *
      * @return     { description_of_the_return_value }.
      */
-    public List subList(final int start, final int end) {
+    public List subList(final int start, final int end) throws IndexOutOfBoundsException {
         // write the logic for subList
         //if (start >= 0 && start < size && end <= size
                 //&& end >= 0 && start <= end) {
         try {
-            if (end >= 0 && start >= 0) {
+            if (start >= 0 && start < size && end <= size
+                && end >= 0 && start <= end) {
                 List lee = new List();
                 for (int i = start; i < end; i++) {
                     lee.add(list[i]);
                 } return lee;
             }
             else {
-                System.out.println("Index Out of Bounds Exception");
-                return null;
+                throw new IndexOutOfBoundsException();
             }
         }
         catch(IndexOutOfBoundsException e){
