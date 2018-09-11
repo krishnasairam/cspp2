@@ -94,7 +94,7 @@ class List {
         String str = "[";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
-            str = str + list[i] + ", ";
+            str = str + list[i] + ",";
         }
         str = str + list[i] + "]";
         return str;
@@ -158,15 +158,18 @@ class List {
      */
     public List subList(final int start, final int end) {
         // write the logic for subList
-        if (start >= 0 && start < size && end <= size
-                && end >= 0 && start <= end) {
+        //if (start >= 0 && start < size && end <= size
+                //&& end >= 0 && start <= end) {
+        try {
             List lee = new List();
             for (int i = start; i < end; i++) {
                 lee.add(list[i]);
             } return lee;
         }
-        System.out.println("Index Out of Bounds Exception");
-        return null;
+        catch(IndexOutOfBoundsException e){
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
     }
     /**
      * equals.
