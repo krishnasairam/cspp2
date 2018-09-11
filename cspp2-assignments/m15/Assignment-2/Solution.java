@@ -299,11 +299,10 @@ public final class Solution {
                 break;
             case "headSet":
                 int[] headarray = s.headSet(Integer.parseInt(tokens[1]));
-                SortedSetADT headset = new SortedSetADT();
+                try {
+                    SortedSetADT headset = new SortedSetADT();
                 headset.addAll(headarray);
-                if (headset.size() != 0) {
-                    System.out.println(headset);
-                } else {
+                } catch (NullPointerException e) {
                     System.out.println("Set Empty Exception");
                 }
                 break;
