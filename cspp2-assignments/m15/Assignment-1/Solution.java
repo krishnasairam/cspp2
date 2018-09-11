@@ -166,7 +166,7 @@ class List {
                 lee.add(list[i]);
             } return lee;
         }
-        catch(IndexOutOfBoundsException e){
+        catch(Exception e){
             System.out.println("Index Out of Bounds Exception");
             return null;
         }
