@@ -166,7 +166,8 @@ class SortedSetADT {
                     s++;
                 }
             } return carray;
-        } return null;
+        }
+        return null;
     }
     /**
      * subset.
@@ -215,7 +216,8 @@ class SortedSetADT {
         return set[size - 1];
     } catch (IndexOutOfBoundsException e) {
         System.out.println("Set Empty Exception");
-    } return -1;
+    }
+    return -1;
     }
 }
     /**
