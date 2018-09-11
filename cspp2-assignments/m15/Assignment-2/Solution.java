@@ -202,13 +202,8 @@ class SortedSetADT {
                 temp[s++] = set[i];
             }
         }
-        if (s == 0) {
-        System.out.println("Set Empty Exception");
-        return null;
-        } else {
         temp = Arrays.copyOf(temp, s);
         return temp;
-        }
     }
     /**
      * last.
