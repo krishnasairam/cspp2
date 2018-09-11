@@ -211,9 +211,11 @@ class SortedSetADT {
      * @return     last value.
      */
     public int last() {
-    //try {
+    try {
         return set[size - 1];
-    //System.out.println("Set Empty Exception");
+    } catch (IndexOutOfBoundsException e) {
+        System.out.println("Set Empty Exception");
+    } return -1;
     }
 }
     /**
@@ -304,7 +306,9 @@ public final class Solution {
                 }
                 break;
             case "last":
-                System.out.println(s.last());
+                if (s.last() != -1) {
+                    System.out.println(s.last());
+                }
                 break;
             case "intersection":
                 s = new SortedSetADT();
