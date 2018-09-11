@@ -58,12 +58,16 @@ class List {
      *
      * @param      index  The index.
      */
-    public void remove(final int index) {
+    public void remove(final int index) throws IndexOutOfBoundsException {
         try {
-            for (int i = index; i < size - 1; i++) {
-                list[i] = list[i + 1];
+            if (index >= 0 && index < size) {
+                for (int i = index; i < size - 1; i++) {
+                    list[i] = list[i + 1];
+                }
+                size--;
+            } else {
+                throw new IndexOutOfBoundsException();
             }
-            size--;
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Invalid Position Exception");
         }
