@@ -59,12 +59,12 @@ class List {
      * @param      index  The index.
      */
     public void remove(final int index) {
-        if (index >= 0 && index < size) {
+        try {
             for (int i = index; i < size - 1; i++) {
                 list[i] = list[i + 1];
             }
             size--;
-        } else {
+        } catch (IndexOutOfBoundsException e) {
             System.out.println("Invalid Position Exception");
         }
     }
