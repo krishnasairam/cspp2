@@ -120,8 +120,8 @@ class Patron {
      * @param      mobilenumber1  The mobilenumber 1
      * @param      bookedseats1   The bookedseats 1
      */
-    Patron(final String customername1, final String mobilenumber1
-        , final String[] bookedseats1) {
+    Patron(final String customername1, final String mobilenumber1,
+        final String[] bookedseats1) {
         this.customername = customername1;
         this.mobilenumber = mobilenumber1;
         this.bookedseats = bookedseats1;
