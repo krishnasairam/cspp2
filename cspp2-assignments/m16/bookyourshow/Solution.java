@@ -240,21 +240,14 @@ class BookYourShow {
         }
     }
     public void printTicket(String moviename, String datetime, String mobileNumber) {
-        /**Show show = getAShow(moviename, datetime);
-        if (show != null) {
+        Show show = getAShow(moviename, datetime);
             for (int i = 0; i < patronSize; i++) {
                 if (mobileNumber.equals(patrons[i].getmobileNumber())) {
-                    System.out.println(moviename + " " + datetime + " " + mobileNumber);
+                    System.out.println( mobileNumber+" "+moviename+" "+datetime);
                 } else {
                     System.out.println("Invalid");
                 }
             }
-        } else {
-            System.out.println("No show");
-        }*/
-        String s = mobileNumber+" "+moviename+" "+datetime;
-        System.out.println(s);
-        //Mobile number check, datatime check and moviename check.
     }
     public void showAll() {
         for (int i = 0; i < showSize; i++) {
