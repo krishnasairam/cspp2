@@ -240,10 +240,10 @@ class BookYourShow {
         }
     }
     public void printTicket(String moviename, String datetime, String mobileNumber) {
-        Show show = getAShow(moviename, datetime);
+        String s = mobileNumber+" "+moviename+" "+datetime;
             for (int i = 0; i < patronSize; i++) {
                 if (mobileNumber.equals(patrons[i].getmobileNumber())) {
-                    System.out.println( mobileNumber+" "+moviename+" "+datetime);
+                    System.out.println(s);
                 } else {
                     System.out.println("Invalid");
                 }
