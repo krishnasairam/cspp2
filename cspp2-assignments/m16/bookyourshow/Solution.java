@@ -65,7 +65,7 @@ class Show {
     }
 
     public String toString() {
-        String s = this.moviename+this.showdatetime +",[";
+        String s = this.moviename+","+this.showdatetime +",[";
         for (int i = 0; i < seats.length - 1; i++) {
             s += seats[i] +",";
         }
@@ -139,7 +139,7 @@ class Patron {
     }
 
     public String toString() {
-        String s = this.customername+this.mobilenumber+"[";
+        String s = this.customername+","+this.mobilenumber+",[";
         for (int i = 0; i < bookedseats.length - 1; i++) {
             s += bookedseats[i] +",";
         }
@@ -240,7 +240,7 @@ class BookYourShow {
         }
     }
     public void printTicket(String moviename, String datetime, String mobileNumber) {
-        Show show = getAShow(moviename, datetime);
+        /**Show show = getAShow(moviename, datetime);
         if (show != null) {
             for (int i = 0; i < patronSize; i++) {
                 if (mobileNumber.equals(patrons[i].getmobileNumber())) {
@@ -251,7 +251,9 @@ class BookYourShow {
             }
         } else {
             System.out.println("No show");
-        }
+        }*/
+        String s = mobileNumber+" "+moviename+" "+datetime;
+        System.out.println(s);
         //Mobile number check, datatime check and moviename check.
     }
     public void showAll() {
