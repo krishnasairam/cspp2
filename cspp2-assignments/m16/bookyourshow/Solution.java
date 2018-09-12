@@ -72,9 +72,9 @@ class Show {
     public String toString() {
         String s = this.moviename + "," + this.showdatetime + ",[";
         for (int i = 0; i < seats.length - 1; i++) {
-            s += seats[i] +",";
+            s += seats[i] + ",";
         }
-        s += seats[seats.length-1]+"]";
+        s += seats[seats.length - 1] + "]";
         return s;
     }
     /**
@@ -158,7 +158,7 @@ class Patron {
         for (int i = 0; i < bookedseats.length - 1; i++) {
             s += bookedseats[i] + ",";
         }
-        s += bookedseats[bookedseats.length-1] + "]";
+        s += bookedseats[bookedseats.length - 1] + "]";
         return s;
 
     }
@@ -231,12 +231,25 @@ class BookYourShow {
         }
         shows[showSize++] = show;
     }
+    /**
+     * Adds a patron.
+     *
+     * @param      patron  The patron
+     */
     public void addAPatron(final Patron patron) {
         if (patronSize >= patrons.length) {
             resize();
         }
         patrons[patronSize++] = patron;
     }
+    /**
+     * Gets a show.
+     *
+     * @param      moviename  The moviename
+     * @param      datetime   The datetime
+     *
+     * @return     A show.
+     */
     public Show getAShow(final String moviename, final String datetime) {
         for (int i = 0; i < showSize; i++) {
             if (shows[i].getmovieName().equals(moviename)
@@ -246,7 +259,15 @@ class BookYourShow {
         }
         return null;
     }
-    public void bookAShow(final String moviename, final String datetime, final Patron p) {
+    /**
+     * { function_description }.
+     *
+     * @param      moviename  The moviename
+     * @param      datetime   The datetime
+     * @param      p          { parameter_description }
+     */
+    public void bookAShow(final String moviename, final String datetime,
+        final Patron p) {
         addAPatron(p);
         Show avaliableShow = getAShow(moviename, datetime);
         if (avaliableShow != null) {
@@ -254,7 +275,8 @@ class BookYourShow {
             String[] bookedseats = p.getbookedSeats();
             for (int i = 0; i < seats.length; i++) {
                 for (int j = 0; j < bookedseats.length; j++) {
-                    if (seats[i].equals(bookedseats[j]) && !seats[i].equals("N/A")) {
+                    if (seats[i].equals(bookedseats[j])
+                        && !seats[i].equals("N/A")) {
                         seats[i] = "N/A";
                     }
                 }
@@ -263,7 +285,15 @@ class BookYourShow {
             System.out.println("No show");
         }
     }
-    public void printTicket(String moviename, String datetime, String mobileNumber) {
+    /**
+     * { function_description }.
+     *
+     * @param      moviename     The moviename
+     * @param      datetime      The datetime
+     * @param      mobileNumber  The mobile number
+     */
+    public void printTicket(final String moviename, final String datetime,
+        final String mobileNumber) {
         Show n = getAShow(moviename, datetime);
         String s = mobileNumber + " " + moviename + " " + datetime;
         if (n != null) {
@@ -277,6 +307,9 @@ class BookYourShow {
         System.out.println("Invalid");
         }
     }
+    /**
+     * Shows all.
+     */
     public void showAll() {
         for (int i = 0; i < showSize; i++) {
         System.out.println(shows[i]);
@@ -287,7 +320,7 @@ class BookYourShow {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
 
     /**
      * Constructs the object.
