@@ -65,7 +65,7 @@ class Show {
     }
 
     public String toString() {
-        String s = "";
+        String s = "["+this.moviename+this.showdatetime+this.seats+"]";
         return s;
     }
 }
@@ -135,7 +135,7 @@ class Patron {
     }
 
     public String toString() {
-        String s = "";
+        String s = "["+this.customername+this.mobilenumber+this.bookedseats+"]";
         return s;
 
     }
