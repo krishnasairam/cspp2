@@ -72,6 +72,11 @@ class Show {
         s += seats[seats.length-1]+"]";
         return s;
     }
+    public String exceptTickets() {
+        String s = "";
+        s += moviename + "," + showdatetime;
+        return s;
+    }
 }
 
 /**
@@ -316,7 +321,7 @@ public class Solution {
                 case "get":
                     Show show = bys.getAShow(check[1], tokens[1]);
                     if (show != null) {
-                       System.out.println(show);
+                       System.out.println(show.exceptTickets());
                     } else {
                         System.out.println("No show");
                     }
