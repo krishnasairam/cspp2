@@ -232,9 +232,18 @@ class BookYourShow {
         return null;
     }
     public void bookAShow(final String moviename, final String datetime, final Patron p) {
+        addAPatron(p);
         Show avaliableShow = getAShow(moviename, datetime);
         if (avaliableShow != null) {
-            addAPatron(p);
+            String[] seats = avaliableShow.getSeats();
+            String[] bookedseats = p.getbookedSeats();
+            for (int i = 0; i < seats.length; i++) {
+                for (int j = 0; j < bookedseats.length; j++) {
+                    if (seats[i].equals(bookedseats[j]) && !seats[i].equals("N/A")) {
+                        seats[i] = "N/A";
+                    }
+                }
+            }
         } else {
             System.out.println("No show");
         }
