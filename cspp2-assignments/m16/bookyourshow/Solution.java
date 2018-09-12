@@ -120,7 +120,8 @@ class Patron {
      * @param      mobilenumber1  The mobilenumber 1
      * @param      bookedseats1   The bookedseats 1
      */
-    Patron(final String customername1, final String mobilenumber1, final String[] bookedseats1) {
+    Patron(final String customername1, final String mobilenumber1
+        , final String[] bookedseats1) {
         this.customername = customername1;
         this.mobilenumber = mobilenumber1;
         this.bookedseats = bookedseats1;
@@ -152,7 +153,11 @@ class Patron {
     public String[] getbookedSeats() {
         return this.bookedseats;
     }
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         String s = this.customername + "," + this.mobilenumber + ",[";
         for (int i = 0; i < bookedseats.length - 1; i++) {
@@ -189,8 +194,9 @@ class BookYourShow {
      * Constructs the object.
      */
     BookYourShow() {
-        this.patrons = new Patron[10];
-        this.shows = new Show[10];
+        final int x = 10;
+        this.patrons = new Patron[x];
+        this.shows = new Show[x];
         this.showSize = 0;
         this.patronSize = 0;
     }
