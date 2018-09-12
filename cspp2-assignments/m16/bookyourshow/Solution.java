@@ -263,6 +263,7 @@ class BookYourShow {
                     return;
                 }
             } System.out.println("Invalid");
+        } else {
         System.out.println("Invalid");
         }
     }
