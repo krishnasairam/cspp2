@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.Scanner;
-import java.io.BufferedInputStream;
 /**
  * Class for show.
  */
@@ -31,7 +30,8 @@ class Show {
      * @param      showdatetime1  The showdatetime 1
      * @param      seats1         The seats 1
      */
-    Show(final String moviename1, final String showdatetime1, final String[] seats1) {
+    Show(final String moviename1, final String showdatetime1,
+        final String[] seats1) {
         this.moviename = moviename1;
         this.showdatetime = showdatetime1;
         this.seats = seats1;
@@ -64,14 +64,24 @@ class Show {
         return this.seats;
     }
 
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
-        String s = this.moviename+","+this.showdatetime +",[";
+        String s = this.moviename + "," + this.showdatetime + ",[";
         for (int i = 0; i < seats.length - 1; i++) {
             s += seats[i] +",";
         }
         s += seats[seats.length-1]+"]";
         return s;
     }
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String exceptTickets() {
         String s = "";
         s += moviename + "," + showdatetime;
@@ -144,11 +154,11 @@ class Patron {
     }
 
     public String toString() {
-        String s = this.customername+","+this.mobilenumber+",[";
+        String s = this.customername + "," + this.mobilenumber + ",[";
         for (int i = 0; i < bookedseats.length - 1; i++) {
-            s += bookedseats[i] +",";
+            s += bookedseats[i] + ",";
         }
-        s += bookedseats[bookedseats.length-1]+"]";
+        s += bookedseats[bookedseats.length-1] + "]";
         return s;
 
     }
@@ -255,7 +265,7 @@ class BookYourShow {
     }
     public void printTicket(String moviename, String datetime, String mobileNumber) {
         Show n = getAShow(moviename, datetime);
-        String s = mobileNumber+" "+moviename+" "+datetime;
+        String s = mobileNumber + " " + moviename + " " + datetime;
         if (n != null) {
             for (int i = 0; i < patronSize; i++) {
                 if (mobileNumber.equals(patrons[i].getmobileNumber())) {
