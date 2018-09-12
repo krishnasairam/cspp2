@@ -65,11 +65,11 @@ class Show {
     }
 
     public String toString() {
-        String s = this.moviename+this.showdatetime +"[";
-        for (String i :this.seats) {
-            s += i +",";
+        String s = this.moviename+this.showdatetime +",[";
+        for (int i = 0; i < seats.length - 1; i++) {
+            s += seats[i] +",";
         }
-        s += "]";
+        s += seats[seats.length-1]+"]";
         return s;
     }
 }
@@ -140,10 +140,10 @@ class Patron {
 
     public String toString() {
         String s = this.customername+this.mobilenumber+"[";
-        for (String i :this.bookedseats) {
-            s += i + ",";
+        for (int i = 0; i < bookedseats.length - 1; i++) {
+            s += bookedseats[i] +",";
         }
-        s += "]";
+        s += bookedseats[bookedseats.length-1]+"]";
         return s;
 
     }
