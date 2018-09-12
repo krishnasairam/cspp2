@@ -234,7 +234,7 @@ class BookYourShow {
     public void bookAShow(final String moviename, final String datetime, final Patron p) {
         Show avaliableShow = getAShow(moviename, datetime);
         if (avaliableShow != null) {
-
+            addAPatron(p);
         } else {
             System.out.println("No show");
         }
