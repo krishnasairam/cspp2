@@ -65,7 +65,11 @@ class Show {
     }
 
     public String toString() {
-        String s = "["+this.moviename+this.showdatetime+this.seats+"]";
+        String s = "["+this.moviename+this.showdatetime;
+        for (String i :this.seats) {
+            s += i;
+        }
+        s += "]";
         return s;
     }
 }
@@ -135,7 +139,11 @@ class Patron {
     }
 
     public String toString() {
-        String s = "["+this.customername+this.mobilenumber+this.bookedseats+"]";
+        String s = "["+this.customername+this.mobilenumber;
+        for (String i :this.bookedseats) {
+            s += i;
+        }
+        s += "]";
         return s;
 
     }
