@@ -255,11 +255,9 @@ class BookYourShow {
             for (int i = 0; i < patronSize; i++) {
                 if (mobileNumber.equals(patrons[i].getmobileNumber())) {
                     System.out.println(s);
-                } else {
-                    System.out.println("Invalid");
-                }
-            }
-        System.out.println("No show");
+                } return;
+            } System.out.println("Invalid");
+        System.out.println("Invalid");
         }
     }
     public void showAll() {
