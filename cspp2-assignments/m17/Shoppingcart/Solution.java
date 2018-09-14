@@ -65,16 +65,18 @@ class ShoppingCart {
         items[itemsize++] = item;
     }
     public void addToCart(Item item) {
+        if(cart[0] != null) {
+            for (Item e : cart) {
+                if (e.getproductname().equals(item.getproductname())) {
+                    e.setquantity(-(item.getquantity()));
+                    return;
+                }
+            }
+        }
         for (int i = 0; i < itemsize; i++) {
             if (items[i].getproductname().equals(item.getproductname()) && items[i].getquantity() >= item.getquantity()) {
                 if (cartsize >= cart.length) {
                     resize();
-                }
-                for(Item e: cart){
-                    if(e.getproductname().equals(item.getproductname())){
-                        e.setquantity(-(item.getquantity()));
-                        return;
-                    }
                 }
                 cart[cartsize++] = item;
                 items[i].setquantity(item.getquantity());
@@ -148,78 +150,78 @@ class ShoppingCart {
             }
         }
     }
-        public void printInvoice() {
-            System.out.println("Name   quantity   Price");
-            for (int i = 0; i < cartsize; i++) {
-                for (int j = 0; j < itemsize; j++) {
-                    if (cart[i].getproductname().equals(items[j].getproductname())) {
-                        System.out.println(cart[i].getproductname() + " " + cart[i].getquantity() + " " + items[j].getunitprice());
-                    }
+    public void printInvoice() {
+        System.out.println("Name   quantity   Price");
+        for (int i = 0; i < cartsize; i++) {
+            for (int j = 0; j < itemsize; j++) {
+                if (cart[i].getproductname().equals(items[j].getproductname())) {
+                    System.out.println(cart[i].getproductname() + " " + cart[i].getquantity() + " " + items[j].getunitprice());
                 }
             }
-            System.out.println("Total:" + Double.toString(getTotalAmount()));
-            System.out.println("Disc%:" + Double.toString((getTotalAmount() * coupondiscount) / 100));
-            System.out.println("Tax:" + Double.toString(tax));
-            System.out.printf("Payable amount: %.1f\n", getPayableAmount());
         }
+        System.out.println("Total:" + Double.toString(getTotalAmount()));
+        System.out.println("Disc%:" + Double.toString((getTotalAmount() * coupondiscount) / 100));
+        System.out.println("Tax:" + Double.toString(tax));
+        System.out.printf("Payable amount: %.1f\n", getPayableAmount());
     }
+}
+/**
+ * Class for solution.
+ */
+public final class Solution {
+
     /**
-     * Class for solution.
+     * Constructs the object.
      */
-    public final class Solution {
+    private Solution() {
+        //Empty.
+    }
 
-        /**
-         * Constructs the object.
-         */
-        private Solution() {
-            //Empty.
-        }
-
-        /**
-         * {Main method}.
-         *
-         * @param      args  The arguments
-         */
-        public static void main(final String[] args) {
-            ShoppingCart sc = new ShoppingCart();
-            Scanner scan = new Scanner(System.in);
-            int testCases = Integer.parseInt(scan.nextLine());
-            for (int i = 0; i < testCases; i++) {
-                String[] tokens = scan.nextLine().split(" ");
-                switch (tokens[0]) {
-                case "Item":
-                    String[] details = tokens[1].split(",");
-                    sc.addToCatalog(new Item(details[0], Integer.parseInt(details[1]), Double.parseDouble(details[2])));
-                    break;
-                case "add":
-                    String[] details1 = tokens[1].split(",");
-                    sc.addToCart(new Item(details1[0], Integer.parseInt(details1[1])));
-                    break;
-                case "remove":
-                    String[] details2 = tokens[1].split(",");
-                    sc.removeFromCart(new Item(details2[0], Integer.parseInt(details2[1])));
-                    break;
-                case "catalog":
-                    sc.showCatalog();
-                    break;
-                case "show":
-                    sc.showCart();
-                    break;
-                case "totalAmount":
-                    System.out.println("totalAmount: " + Double.toString(sc.getTotalAmount()));
-                    break;
-                case "payableAmount":
-                    System.out.printf("Payable amount: %.1f\n", sc.getPayableAmount());
-                    break;
-                case "coupon":
-                    sc.applyCoupon(tokens[1]);
-                    break;
-                case "print":
-                    sc.printInvoice();
-                    break;
-                default:
-                    break;
-                }
+    /**
+     * {Main method}.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        ShoppingCart sc = new ShoppingCart();
+        Scanner scan = new Scanner(System.in);
+        int testCases = Integer.parseInt(scan.nextLine());
+        for (int i = 0; i < testCases; i++) {
+            String[] tokens = scan.nextLine().split(" ");
+            switch (tokens[0]) {
+            case "Item":
+                String[] details = tokens[1].split(",");
+                sc.addToCatalog(new Item(details[0], Integer.parseInt(details[1]), Double.parseDouble(details[2])));
+                break;
+            case "add":
+                String[] details1 = tokens[1].split(",");
+                sc.addToCart(new Item(details1[0], Integer.parseInt(details1[1])));
+                break;
+            case "remove":
+                String[] details2 = tokens[1].split(",");
+                sc.removeFromCart(new Item(details2[0], Integer.parseInt(details2[1])));
+                break;
+            case "catalog":
+                sc.showCatalog();
+                break;
+            case "show":
+                sc.showCart();
+                break;
+            case "totalAmount":
+                System.out.println("totalAmount: " + Double.toString(sc.getTotalAmount()));
+                break;
+            case "payableAmount":
+                System.out.printf("Payable amount: %.1f\n", sc.getPayableAmount());
+                break;
+            case "coupon":
+                sc.applyCoupon(tokens[1]);
+                break;
+            case "print":
+                sc.printInvoice();
+                break;
+            default:
+                break;
             }
         }
     }
+}
