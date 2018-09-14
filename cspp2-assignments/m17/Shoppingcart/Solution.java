@@ -111,9 +111,10 @@ class ShoppingCart {
 		}
 		return totalAmount;
 	}
+	double temp = 0;
 	public double getPayableAmount() {
 		double total = getTotalAmount();
-		double temp = (total - ((total * coupondiscount) / 100));
+		double temptotal = (total - ((total * coupondiscount) / 100));
 		return (temp + ((temp*15)/100));
 	}
 	public void applyCoupon(String coupon) {
@@ -146,7 +147,7 @@ class ShoppingCart {
 		}
 		System.out.println("Total:" + Double.toString(getTotalAmount()));
 		System.out.println("Disc%:" + Double.toString((getTotalAmount()*coupondiscount)/100));
-		System.out.println("Tax:" + Double.toString((getTotalAmount() * 15) / 100));
+		System.out.println("Tax:" + Double.toString(temp + ((temp*15)/100)));
 		System.out.printf("Payable amount: %.1f\n", getPayableAmount());
 	}
 }
