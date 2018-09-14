@@ -113,7 +113,9 @@ class ShoppingCart {
 	}
 	public double getPayableAmount() {
 		double total = getTotalAmount();
-		return (total + ((total * 15) / 100) - ((total * coupondiscount) / 100));
+		System.out.println((total * 15) / 100);
+		double temp = (total - ((total * coupondiscount) / 100));
+		return ((temp*15)/100);
 	}
 	public void applyCoupon(String coupon) {
 		switch (coupon) {
@@ -130,6 +132,7 @@ class ShoppingCart {
 			coupondiscount = 50;
 			break;
 		default:
+		System.out.println("Invalid coupon");
 			break;
 		}
 	}
