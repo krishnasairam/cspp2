@@ -195,7 +195,7 @@ public final class Solution {
 				System.out.println("totalAmount: " + Double.toString(sc.getTotalAmount()));
 				break;
 			case "payableAmount":
-				System.out.println("payable amount: " + Double.toString(sc.getPayableAmount()));
+				System.out.println("Payable amount: " + Double.toString(sc.getPayableAmount()));
 				break;
 			case "coupon":
 				sc.applyCoupon(tokens[1]);
