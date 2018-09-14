@@ -143,9 +143,9 @@ class ShoppingCart {
 			}
 		}
 		System.out.println("totalAmount: " + Double.toString(getTotalAmount()));
-		System.out.println("total: " + Double.toString(getTotalAmount()));
-		System.out.println("Disc%: " + Double.toString(coupondiscount));
-		System.out.println("Tax: " + Double.toString((getTotalAmount() * 15) / 100));
+		System.out.println("Total:" + Double.toString(getTotalAmount()));
+		System.out.println("Disc%:" + Double.toString(coupondiscount));
+		System.out.println("Tax:" + Double.toString((getTotalAmount() * 15) / 100));
 		return ("Payable amount: " + Double.toString(getPayableAmount()));
 	}
 }
@@ -195,7 +195,7 @@ public final class Solution {
 				System.out.println("totalAmount:" + Double.toString(sc.getTotalAmount()));
 				break;
 			case "payableAmount":
-				System.out.println("payableAmount" + Double.toString(sc.getPayableAmount()));
+				System.out.println("payable amount" + Double.toString(sc.getPayableAmount()));
 				break;
 			case "coupon":
 				sc.applyCoupon(tokens[1]);
