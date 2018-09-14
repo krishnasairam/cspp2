@@ -134,9 +134,18 @@ class ShoppingCart {
 		}
 	}
 	public String printInvoice() {
+		System.out.println("Name   quantity   Price");
+		for (int i = 0; i < cartsize; i++) {
+			for (int j = 0; j < itemsize; j++) {
+				if (cart[i].getproductname().equals(items[j].getproductname())) {
+					System.out.println(cart[i].getproductname() + " " + cart[i].getquantity() + " " + items[j].getunitprice());
+				}
+			}
+		}
+		System.out.println("totalAmount: " + Double.toString(getTotalAmount()));
 		System.out.println("total: " + Double.toString(getTotalAmount()));
 		System.out.println("Disc%: " + Double.toString(coupondiscount));
-		System.out.println("Payable amount:" + Double.toString((getTotalAmount() * 15) / 100));
+		System.out.println("Tax: " + Double.toString((getTotalAmount() * 15) / 100));
 		return ("Payable amount: " + Double.toString(getPayableAmount()));
 	}
 }
