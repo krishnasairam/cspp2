@@ -67,12 +67,6 @@ class ShoppingCart {
     public void addToCart(Item item) {
         for (int i = 0; i < itemsize; i++) {
             if (items[i].getproductname().equals(item.getproductname()) && items[i].getquantity() >= item.getquantity()) {
-                for (Item e : cart) {
-                    if (e.getproductname().equals(item.getproductname())) {
-                        e.setquantity(-(item.getquantity()));
-                        return;
-                    }
-                }
                 if (cartsize >= cart.length) {
                     resize();
                 }
