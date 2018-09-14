@@ -70,6 +70,12 @@ class ShoppingCart {
                 if (cartsize >= cart.length) {
                     resize();
                 }
+                for(Item e: cart){
+                    if(e.getproductname().equals(item.getproductname())){
+                        e.setquantity(-(item.getquantity()));
+                        return;
+                    }
+                }
                 cart[cartsize++] = item;
                 items[i].setquantity(item.getquantity());
             }
