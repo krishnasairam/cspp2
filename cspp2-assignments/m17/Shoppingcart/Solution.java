@@ -40,6 +40,7 @@ class ShoppingCart {
 	private Item[] items;
 	private Item[] cart;
 	private double coupondiscount;
+	private double tax;
 	public ShoppingCart() {
 		final int x = 10;
 		coupondiscount = 0;
@@ -111,10 +112,10 @@ class ShoppingCart {
 		}
 		return totalAmount;
 	}
-	double temp = 0;
 	public double getPayableAmount() {
 		double total = getTotalAmount();
 		double temp = (total - ((total * coupondiscount) / 100));
+		double tax = ((temp*15)/100);
 		return (temp + ((temp*15)/100));
 	}
 	public void applyCoupon(String coupon) {
@@ -147,7 +148,7 @@ class ShoppingCart {
 		}
 		System.out.println("Total:" + Double.toString(getTotalAmount()));
 		System.out.println("Disc%:" + Double.toString((getTotalAmount()*coupondiscount)/100));
-		System.out.println("Tax:" + Double.toString(temp + ((temp*15)/100)));
+		System.out.println("Tax:" + Double.toString(tax));
 		System.out.printf("Payable amount: %.1f\n", getPayableAmount());
 	}
 }
