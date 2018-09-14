@@ -136,7 +136,7 @@ class ShoppingCart {
 			break;
 		}
 	}
-	public String printInvoice() {
+	public void printInvoice() {
 		System.out.println("Name   quantity   Price");
 		for (int i = 0; i < cartsize; i++) {
 			for (int j = 0; j < itemsize; j++) {
@@ -148,7 +148,7 @@ class ShoppingCart {
 		System.out.println("Total:" + Double.toString(getTotalAmount()));
 		System.out.println("Disc%:" + Double.toString(coupondiscount));
 		System.out.println("Tax:" + Double.toString((getTotalAmount() * 15) / 100));
-		return ("Payable amount: " + Double.toString(getPayableAmount()));
+		System.out.printf("Payable amount: %.1f\n", getPayableAmount());
 	}
 }
 /**
@@ -197,13 +197,13 @@ public final class Solution {
 				System.out.println("totalAmount: " + Double.toString(sc.getTotalAmount()));
 				break;
 			case "payableAmount":
-				System.out.println("Payable amount: " + Double.toString(sc.getPayableAmount()));
+				System.out.printf("Payable amount: %.1f\n", sc.getPayableAmount());
 				break;
 			case "coupon":
 				sc.applyCoupon(tokens[1]);
 				break;
 			case "print":
-				System.out.println(sc.printInvoice());
+				sc.printInvoice();
 				break;
 			default:
 				break;
