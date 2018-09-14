@@ -142,7 +142,6 @@ class ShoppingCart {
 				}
 			}
 		}
-		System.out.println("totalAmount: " + Double.toString(getTotalAmount()));
 		System.out.println("Total:" + Double.toString(getTotalAmount()));
 		System.out.println("Disc%:" + Double.toString(coupondiscount));
 		System.out.println("Tax:" + Double.toString((getTotalAmount() * 15) / 100));
