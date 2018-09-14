@@ -129,6 +129,9 @@ class ShoppingCart {
 		case "IND40":
 			coupondiscount = 40;
 			break;
+		case "IND50":
+			coupondiscount = 50;
+			break;
 		default:
 			break;
 		}
