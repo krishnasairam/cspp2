@@ -41,6 +41,7 @@ class ShoppingCart {
 	private Item[] cart;
 	private double coupondiscount;
 	private double tax;
+	private double totalAmount;
 	public ShoppingCart() {
 		final int x = 10;
 		coupondiscount = 0;
@@ -65,7 +66,7 @@ class ShoppingCart {
 	public void addToCart(Item item) {
 		for (int j = 0; j < cartsize; j++) {
 			if (cart[j].getproductname().equals(item.getproductname())) {
-				cart[j].setquantity(item.getquantity());
+				cart[j].setquantity(-item.getquantity());
 			} else {
 				for (int i = 0; i < itemsize; i++) {
 					if (items[i].getproductname().equals(item.getproductname()) && items[i].getquantity() >= item.getquantity()) {
@@ -108,7 +109,7 @@ class ShoppingCart {
 		}
 	}
 	public double getTotalAmount() {
-		double totalAmount = 0;
+		totalAmount = 0;
 		for (int i = 0; i < cartsize; i++) {
 			for (int j = 0; j < itemsize; j++) {
 				if (cart[i].getproductname().equals(items[j].getproductname())) {
