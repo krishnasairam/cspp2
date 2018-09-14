@@ -3,11 +3,11 @@ import java.util.Scanner;
 class Item {
 	private String productname;
 	private int quantity;
-	private int unitprice;
+	private double unitprice;
 	public Item() {
 		// empty constructor
 	}
-	public Item(String itemname, int numberofitems, int price) {
+	public Item(String itemname, int numberofitems, double price) {
 		productname = itemname;
 		quantity = numberofitems;
 		unitprice = price;
@@ -25,7 +25,7 @@ class Item {
 	public void setquantity(int q) {
 		quantity = quantity - q;
 	}
-	public int getunitprice() {
+	public double getunitprice() {
 		return unitprice;
 	}
 	public String toString() {
@@ -101,15 +101,15 @@ class ShoppingCart {
 			System.out.println(items[i]);
 		}
 	}
-	public int getTotalAmount() {
-		int totalAmount = 0;
+	public double getTotalAmount() {
+		double totalAmount = 0;
 		for (int i = 0; i < cartsize; i++) {
 			totalAmount += cart[i].getunitprice();
 		}
 		return totalAmount;
 	}
-	public int getPayableAmount() {
-		int total = getTotalAmount();
+	public double getPayableAmount() {
+		double total = getTotalAmount();
 		return (total + ((total * 15) / 100) - ((total * coupondiscount) / 100));
 	}
 	public void applyCoupon(String coupon) {
@@ -132,7 +132,7 @@ class ShoppingCart {
 		}
 	}
 	public String printInvoice() {
-		return ("Payable amount:" + Integer.toString(getPayableAmount()));
+		return ("Payable amount:" + Double.toString(getPayableAmount()));
 	}
 }
 /**
@@ -161,7 +161,7 @@ public final class Solution {
 			switch (tokens[0]) {
 			case "Item":
 				String[] details = tokens[1].split(",");
-				sc.addToCatalog(new Item(details[0], Integer.parseInt(details[1]), Integer.parseInt(details[2])));
+				sc.addToCatalog(new Item(details[0], Integer.parseInt(details[1]), Double.parseDouble(details[2])));
 				break;
 			case "add":
 				String[] details1 = tokens[1].split(",");
