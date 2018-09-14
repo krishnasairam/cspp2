@@ -116,7 +116,6 @@ class ShoppingCart {
 		double total = getTotalAmount();
 		double temp = (total - ((total * coupondiscount) / 100));
 		tax = ((temp*15)/100);
-		System.out.println(tax);
 		return (temp + ((temp*15)/100));
 	}
 	public void applyCoupon(String coupon) {
