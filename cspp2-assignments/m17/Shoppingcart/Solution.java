@@ -63,13 +63,19 @@ class ShoppingCart {
 		items[itemsize++] = item;
 	}
 	public void addToCart(Item item) {
-		for (int i = 0; i < itemsize; i++) {
-			if (items[i].getproductname().equals(item.getproductname()) && items[i].getquantity() >= item.getquantity()) {
-				if (cartsize >= cart.length) {
-					resize();
+		for (int j = 0; j < cartsize; j++) {
+			if (cart[j].getproductname().equals(item.getproductname())) {
+				 cart[j].setquantity(-item.getquantity());
+			} else {
+				for (int i = 0; i < itemsize; i++) {
+					if (items[i].getproductname().equals(item.getproductname()) && items[i].getquantity() >= item.getquantity()) {
+						if (cartsize >= cart.length) {
+							resize();
+						}
+						cart[cartsize++] = item;
+						items[i].setquantity(item.getquantity());
+					}
 				}
-				cart[cartsize++] = item;
-				items[i].setquantity(item.getquantity());
 			}
 		}
 	}
