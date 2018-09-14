@@ -192,10 +192,10 @@ public final class Solution {
 				sc.showCart();
 				break;
 			case "totalAmount":
-				System.out.println("totalAmount:" + Double.toString(sc.getTotalAmount()));
+				System.out.println("totalAmount: " + Double.toString(sc.getTotalAmount()));
 				break;
 			case "payableAmount":
-				System.out.println("payable amount" + Double.toString(sc.getPayableAmount()));
+				System.out.println("payable amount: " + Double.toString(sc.getPayableAmount()));
 				break;
 			case "coupon":
 				sc.applyCoupon(tokens[1]);
