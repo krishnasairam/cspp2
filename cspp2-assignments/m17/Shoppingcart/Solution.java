@@ -5,7 +5,6 @@ class Item {
 	private int quantity;
 	private double unitprice;
 	public Item() {
-		// empty constructor
 	}
 	public Item(String itemname, int numberofitems, double price) {
 		productname = itemname;
@@ -40,7 +39,7 @@ class ShoppingCart {
 	private int cartsize;
 	private Item[] items;
 	private Item[] cart;
-	private int coupondiscount;
+	private double coupondiscount;
 	public ShoppingCart() {
 		final int x = 10;
 		coupondiscount = 0;
@@ -132,7 +131,11 @@ class ShoppingCart {
 		}
 	}
 	public String printInvoice() {
-		return ("Payable amount:" + Double.toString(getPayableAmount()));
+		System.out.println("totalAmount: " + Double.toString(getTotalAmount()));
+		System.out.println("total: " + Double.toString(getTotalAmount()));
+		System.out.println("Disc%: " + Double.toString(coupondiscount));
+		System.out.println("Payable amount:" + Double.toString((getTotalAmount() * 15) / 100));
+		return ("Payable amount: " + Double.toString(getPayableAmount()));
 	}
 }
 /**
