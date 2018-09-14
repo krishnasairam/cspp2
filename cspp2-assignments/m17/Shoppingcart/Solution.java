@@ -113,7 +113,7 @@ class ShoppingCart {
 	}
 	public double getPayableAmount() {
 		double total = getTotalAmount();
-		return ((total - ((total * coupondiscount) / 100)) * ((total * 15) / 100)) ;
+		return (total + ((total * 15) / 100) - ((total * coupondiscount) / 100));
 	}
 	public void applyCoupon(String coupon) {
 		switch (coupon) {
