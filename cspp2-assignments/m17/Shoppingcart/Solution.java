@@ -103,7 +103,7 @@ class ShoppingCart {
 	public double getTotalAmount() {
 		double totalAmount = 0;
 		for (int i = 0; i < cartsize; i++) {
-			totalAmount += cart[i].getunitprice();
+			totalAmount += cart[i].getunitprice() * cart[i].getquantity();
 		}
 		return totalAmount;
 	}
