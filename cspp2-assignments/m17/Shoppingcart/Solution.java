@@ -103,7 +103,11 @@ class ShoppingCart {
 	public double getTotalAmount() {
 		double totalAmount = 0;
 		for (int i = 0; i < cartsize; i++) {
-			totalAmount += cart[i].getunitprice() * cart[i].getquantity();
+			for (int j = 0; j < itemsize; i++) {
+				if (cart[i].getproductname().equals(items[j].getproductname())) {
+					totalAmount += items[j].getunitprice() * cart[i].getquantity();
+				}
+			}
 		}
 		return totalAmount;
 	}
@@ -130,7 +134,6 @@ class ShoppingCart {
 		}
 	}
 	public String printInvoice() {
-		System.out.println("totalAmount: " + Double.toString(getTotalAmount()));
 		System.out.println("total: " + Double.toString(getTotalAmount()));
 		System.out.println("Disc%: " + Double.toString(coupondiscount));
 		System.out.println("Payable amount:" + Double.toString((getTotalAmount() * 15) / 100));
