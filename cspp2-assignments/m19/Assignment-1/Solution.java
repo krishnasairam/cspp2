@@ -93,7 +93,7 @@ public final class Solution {
                 q.setcorrectanswer(Integer.parseInt(token1[1]));
                 String[] token2 = q.getoptions().split(",");
                 System.out.println(q.getquestion()+"("+Integer.toString(j+1)+")");
-                System.out.println(token2[0]+"      "+token2[1]+"       "+token2[2]+"       "+token2[3]);
+                System.out.println(token2[0]+"       "+token2[1]+"        "+token2[2]+"        "+token2[3]);
                 System.out.println();
                 j++;
             }
@@ -110,10 +110,10 @@ public final class Solution {
         for (Quiz q : quizs) {
             System.out.println(q.getquestion());
             if (q.getanswer() == q.getcorrectanswer()) {
-                System.out.printf("Correct Answer! - Marks Awarded: " + Integer.toString(q.getmarks()));
+                System.out.println("Correct Answer! - Marks Awarded: " + Integer.toString(q.getmarks()));
                 totalscore += q.getmarks();
             } else {
-                System.out.printf("Wrong Answer! - penalty : " + Integer.toString(q.getpenalty()));
+                System.out.println("Wrong Answer! - penalty : " + Integer.toString(q.getpenalty()));
                 totalscore += q.getpenalty();
             }
         }
