@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Arrays;
+import java.util.ArrayList;
 /**
  * Solution class for code-eval.
  */
@@ -58,11 +58,7 @@ public final class Solution {
      * @param      quiz           The quiz object
      * @param      questionCount  The question count
      */
-    public static Quiz[] quizs = new Quiz[10];
-    public static int quizcount = 0;
-    public static void resize() {
-        quizs = Arrays.copyOf(quizs, 2 * quizcount);
-    }
+    public static ArrayList<Quiz> quizs = new ArrayList<Quiz>();
     public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
@@ -73,12 +69,10 @@ public final class Solution {
             String[] token = new_line.split(":");
             quiz.setQuiz(token[0], token[1], Integer.parseInt(token[2])
                         , Integer.parseInt(token[3]), Integer.parseInt(token[4]));
-            if (quizcount >= quizs.length) {
-                resize();
-            }
-            quizs[quizcount++] = quiz;
+            quizs.add(quiz);
         }
     }
+
     /**
      * Starts a quiz.
      *
