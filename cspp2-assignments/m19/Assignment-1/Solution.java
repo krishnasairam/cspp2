@@ -110,10 +110,10 @@ public final class Solution {
 		for (Quiz q : quizs) {
 			System.out.println(q.getquestion());
 			if (q.getanswer() == q.getcorrectanswer()) {
-				System.out.println("Correct Answer! - Marks Awarded: " + Integer.toString(q.getmarks()));
+				System.out.println(" Correct Answer! - Marks Awarded: " + Integer.toString(q.getmarks()));
 				totalscore += q.getmarks();
 			} else {
-				System.out.println("Wrong Answer! - penalty : " + Integer.toString(q.getpenalty()));
+				System.out.println(" Wrong Answer! - penalty : " + Integer.toString(q.getpenalty()));
 				totalscore += q.getpenalty();
 			}
 		}
