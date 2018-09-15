@@ -65,11 +65,12 @@ public final class Solution {
         // add the question objects to the quiz class
         System.out.println(Integer.toString(questionCount) + " are added to the quiz");
         for (int i = 0; i < questionCount; i++) {
+            Quiz a = new Quiz();
             String new_line = s.nextLine();
             String[] token = new_line.split(":");
-            quiz.setQuiz(token[0], token[1], Integer.parseInt(token[2])
+            a.setQuiz(token[0], token[1], Integer.parseInt(token[2])
                         , Integer.parseInt(token[3]), Integer.parseInt(token[4]));
-            quizs.add(quiz);
+            quizs.add(a);
         }
     }
 
@@ -90,8 +91,9 @@ public final class Solution {
                 String new_line1 = s.nextLine();
                 String[] token1 = new_line1.split(" ");
                 q.setcorrectanswer(Integer.parseInt(token1[1]));
+                String[] token2 = q.getoptions().split(",");
                 System.out.println(q.getquestion());
-                System.out.println(q.getoptions());
+                System.out.println(token2[0]+"  "+token2[1]+"   "+token2[2]+"   "+token2[3]);
                 System.out.println();
                 j++;
             }
@@ -157,6 +159,9 @@ public final class Solution {
         }
         public int getcorrectanswer() {
             return correctanswer;
+        }
+        public String toString() {
+            return question;
         }
     }
 
