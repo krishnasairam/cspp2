@@ -113,7 +113,7 @@ public final class Solution {
 				System.out.println(" Correct Answer! - Marks Awarded: " + Integer.toString(q.getmarks()));
 				totalscore += q.getmarks();
 			} else {
-				System.out.println(" Wrong Answer! - penalty : " + Integer.toString(q.getpenalty()));
+				System.out.println(" Wrong Answer! - penalty: " + Integer.toString(q.getpenalty()));
 				totalscore += q.getpenalty();
 			}
 		}
