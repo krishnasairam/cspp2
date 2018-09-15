@@ -68,7 +68,7 @@ public final class Solution {
 			Quiz a = new Quiz();
 			String new_line = s.nextLine();
 			String[] token = new_line.split(":");
-			a.setQuiz(token[0], token[1], Integer.parseInt(token[2])
+			a.setQuiz(token[0], token[1],(token[2])
 						, Integer.parseInt(token[3]), Integer.parseInt(token[4]));
 			quizs.add(a);
 		}
@@ -90,7 +90,7 @@ public final class Solution {
 			if (j < answerCount) {
 				String new_line1 = s.nextLine();
 				String[] token1 = new_line1.split(" ");
-				q.setcorrectanswer(Integer.parseInt(token1[1]));
+				q.setcorrectanswer(token1[1]);
 				String[] token2 = q.getoptions().split(",");
 				System.out.println(q.getquestion()+"("+Integer.toString(j+1)+")");
 				System.out.println(token2[0]+"	"+token2[1]+"	"+token2[2]+"	"+token2[3]);
@@ -109,7 +109,7 @@ public final class Solution {
 		int totalscore = 0;
 		for (Quiz q : quizs) {
 			System.out.println(q.getquestion());
-			if (q.getanswer() == q.getcorrectanswer()) {
+			if (q.getanswer().equals(q.getcorrectanswer())){
 				System.out.println(" Correct Answer! - Marks Awarded: " + Integer.toString(q.getmarks()));
 				totalscore += q.getmarks();
 			} else {
@@ -122,22 +122,22 @@ public final class Solution {
 	static class Quiz {
 		private String question;
 		private String options;
-		private int answer;
+		private String answer;
 		private int marks;
 		private int penalty;
-		private int correctanswer;
+		private String correctanswer;
 		public Quiz() {
 			// empty constructor
 		}
-		public void setQuiz(String ques, String opt, int ans, int mark, int pena) {
+		public void setQuiz(String ques, String opt, String ans, int mark, int pena) {
 			question = ques;
 			options = opt;
 			answer = ans;
 			marks = mark;
 			penalty = pena;
-			correctanswer = 0;
+			correctanswer = "";
 		}
-		public void setcorrectanswer(int correct) {
+		public void setcorrectanswer(String correct) {
 			correctanswer = correct;
 
 		}
@@ -147,7 +147,7 @@ public final class Solution {
 		public String getoptions() {
 			return options;
 		}
-		public int getanswer() {
+		public String getanswer() {
 			return answer;
 		}
 		public int getmarks() {
@@ -156,7 +156,7 @@ public final class Solution {
 		public int getpenalty() {
 			return penalty;
 		}
-		public int getcorrectanswer() {
+		public String getcorrectanswer() {
 			return correctanswer;
 		}
 		public String toString() {
