@@ -274,7 +274,6 @@ public final class Solution {
 									try {
 										quiz.addQuestion(new Question(token[0], choices, Integer.parseInt(token[2])
 										                              , Integer.parseInt(token[3]), Integer.parseInt(token[4])));
-										System.out.println(Integer.toString(q) + " are added to the quiz");
 									} catch (Exception e) {
 										System.out.println("Error! Malformed question");
 									}
@@ -284,6 +283,7 @@ public final class Solution {
 					}
 				}
 			}
+			System.out.println(Integer.toString(q) + " are added to the quiz");
 		}
 	}
 	/**
