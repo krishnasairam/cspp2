@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Arrays;
+//import java.util.Arrays;
 /**
  * Class for question.
  */
@@ -158,6 +158,11 @@ class Quiz {
     public void addQuestion(final Question q) {
         questions[size++] = q;
     }
+    /**
+     * Gets the size.
+     *
+     * @return     The size.
+     */
     public int getSize() {
         return size;
     }
@@ -237,6 +242,13 @@ public final class Solution {
             }
         }
     }
+    /**
+     * { function_description }.
+     *
+     * @param      token  The token
+     *
+     * @return     { description_of_the_return_value }
+     */
     public static boolean exceptions(String[] token) {
         String[] choices = token[1].split(",");
         if (token[0].length() == 0 || token.length < 2 + 2 + 1) {
@@ -322,19 +334,19 @@ public final class Solution {
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
         for (int qu = 0; qu < quiz.getSize(); qu++) {
-            String new_line = scan.nextLine();
-            (quiz.getQuestion(qu)).setResponse(new_line);
+            String newLine = scan.nextLine();
+            (quiz.getQuestion(qu)).setResponse(newLine);
             System.out.println((quiz.getQuestion(qu)).getQuestionText()
             + "(" + (quiz.getQuestion(qu)).getMaxMarks() + ")");
             String[] token2 = (quiz.getQuestion(qu)).getChoice();
             if (token2.length == 2) {
-                System.out.println(token2[0] + "	" + token2[1]);
+                System.out.println(token2[0] + "    " + token2[1]);
             } else if (token2.length == three) {
-                System.out.println(token2[0] + "	" + token2[1]
-                + "	" + token2[2]);
+                System.out.println(token2[0] + "    " + token2[1]
+                + " " + token2[2]);
             } else {
-                System.out.println(token2[0] + "	" +
-                 token2[1] + "	" + token2[2] + "	" + token2[three]);
+                System.out.println(token2[0] + "    "
+                + token2[1] + " " + token2[2] + "   " + token2[three]);
             }
             System.out.println();
         }
@@ -351,12 +363,12 @@ public final class Solution {
             for (int q = 0; q < quiz.getSize(); q++) {
                 System.out.println((quiz.getQuestion(q)).getQuestionText());
                 if ((quiz.getQuestion(q)).evaluateResponse()) {
-                    System.out.println(" Correct Answer! - Marks Awarded: " +
-                     Integer.toString((quiz.getQuestion(q)).getMaxMarks()));
+                    System.out.println(" Correct Answer! - Marks Awarded: "
+                    + Integer.toString((quiz.getQuestion(q)).getMaxMarks()));
                     totalscore += quiz.getQuestion(q).getMaxMarks();
                 } else {
-                    System.out.println(" Wrong Answer! - Penalty: " +
-                     Integer.toString((quiz.getQuestion(q)).getPenalty()));
+                    System.out.println(" Wrong Answer! - Penalty: "
+                    + Integer.toString((quiz.getQuestion(q)).getPenalty()));
                     totalscore += quiz.getQuestion(q).getPenalty();
                 }
             }
