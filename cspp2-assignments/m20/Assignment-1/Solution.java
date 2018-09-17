@@ -252,11 +252,13 @@ public final class Solution {
                     return true;
                 } else {
                     if (choices.length < 2) {
-                        System.out.println(token[0] + " does not have enough answer choices");
+                        System.out.println(
+        token[0] + " does not have enough answer choices");
                         return true;
                     } else {
                         if ((Integer.parseInt(token[2]) > 4)) {
-                            System.out.println("Error! Correct answer choice number is out of range for question text 1");
+                            System.out.println(
+    "Error! Correct answer choice number is out of range for question text 1");
                             return true;
                         }
                     }
@@ -286,13 +288,15 @@ public final class Solution {
                 String[] token = new_line.split(":");
                 String[] choices = token[1].split(",");
                 if (!exceptions(token)) {
-                    quiz.addQuestion(new Question(token[0], choices, Integer.parseInt(token[2])
-                                                  , Integer.parseInt(token[3]), Integer.parseInt(token[4])));
+                    quiz.addQuestion(new Question(token[0], choices,
+                 Integer.parseInt(token[2]), Integer.parseInt(token[3]),
+                  Integer.parseInt(token[4])));
                     count++;
                 }
             }
             if (count == q) {
-                System.out.println(Integer.toString(q) + " are added to the quiz");
+                System.out.println(Integer.toString(q) +
+                 " are added to the quiz");
             }
         }
     }
@@ -303,6 +307,8 @@ public final class Solution {
      * @param      quiz  The quiz
      * @param      q     The answer count
      */
+    public static int three = 3;
+    public static int four = 4;
     public static void startQuiz(final Scanner scan,
                                  final Quiz quiz, final int q) {
         // write your code here to display the quiz questions on the console.
@@ -311,14 +317,17 @@ public final class Solution {
         for (int qu = 0; qu < quiz.getSize(); qu++) {
             String new_line1 = scan.nextLine();
             (quiz.getQuestion(qu)).setResponse(new_line1);
-            System.out.println((quiz.getQuestion(qu)).getQuestionText() + "(" + (quiz.getQuestion(qu)).getMaxMarks() + ")");
+            System.out.println((quiz.getQuestion(qu)).getQuestionText() +
+             "(" + (quiz.getQuestion(qu)).getMaxMarks() + ")");
             String[] token2 = (quiz.getQuestion(qu)).getChoice();
             if (token2.length == 2) {
                 System.out.println(token2[0] + "	" + token2[1]);
-            } else if (token2.length == 3) {
-                System.out.println(token2[0] + "	" + token2[1] + "	" + token2[2]);
+            } else if (token2.length == three) {
+                System.out.println(token2[0] + "	" + token2[1] +
+                 "	" + token2[2]);
             } else {
-                System.out.println(token2[0] + "	" + token2[1] + "	" + token2[2] + "	" + token2[3]);
+                System.out.println(token2[0] + "	" +
+                 token2[1] + "	" + token2[2] + "	" + token2[three]);
             }
             System.out.println();
         }
@@ -335,10 +344,12 @@ public final class Solution {
             for (int q = 0; q < quiz.getSize(); q++) {
                 System.out.println((quiz.getQuestion(q)).getQuestionText());
                 if ((quiz.getQuestion(q)).evaluateResponse()) {
-                    System.out.println(" Correct Answer! - Marks Awarded: " + Integer.toString((quiz.getQuestion(q)).getMaxMarks()));
+                    System.out.println(" Correct Answer! - Marks Awarded: " +
+                     Integer.toString((quiz.getQuestion(q)).getMaxMarks()));
                     totalscore += quiz.getQuestion(q).getMaxMarks();
                 } else {
-                    System.out.println(" Wrong Answer! - Penalty: " + Integer.toString((quiz.getQuestion(q)).getPenalty()));
+                    System.out.println(" Wrong Answer! - Penalty: " +
+                     Integer.toString((quiz.getQuestion(q)).getPenalty()));
                     totalscore += quiz.getQuestion(q).getPenalty();
                 }
             }
