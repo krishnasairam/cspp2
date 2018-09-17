@@ -44,7 +44,8 @@ class Question {
      * @param      penalty1        The penalty 1
      */
     Question(final String question1, final String[] choices1,
-             final int correctAnswer1, final int maxMarks1, final int penalty1) {
+             final int correctAnswer1, final int maxMarks1,
+             final int penalty1) {
         questiontext = question1;
         choices = choices1;
         correctAnswer = correctAnswer1;
@@ -54,7 +55,6 @@ class Question {
     /**
      * { function_description }.
      *
-     * @param      choice  The choice
      *
      * @return     { description_of_the_return_value }
      */
@@ -239,15 +239,15 @@ public final class Solution {
     }
     public static boolean exceptions(String[] token) {
         String[] choices = token[1].split(",");
-        if (token[0].length() == 0 || token.length < 5) {
+        if (token[0].length() == 0 || token.length < 2 + 2 + 1) {
             System.out.println("Error! Malformed question");
             return true;
         } else {
-            if (Integer.parseInt(token[4]) > 0) {
+            if (Integer.parseInt(token[2 + 2]) > 0) {
                 System.out.println("Invalid penalty for " + token[0]);
                 return true;
             } else {
-                if (Integer.parseInt(token[3]) < 0) {
+                if (Integer.parseInt(token[2 + 1]) < 0) {
                     System.out.println("Invalid max marks for " + token[0]);
                     return true;
                 } else {
@@ -264,7 +264,8 @@ public final class Solution {
                     }
                 }
             }
-        } return false;
+        }
+        return false;
     }
     /**
      * Loads questions.
@@ -275,7 +276,7 @@ public final class Solution {
      *
      */
     public static void loadQuestions(final Scanner scan,
-                                     final Quiz quiz, final int q) {
+            final Quiz quiz, final int q) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
@@ -289,14 +290,14 @@ public final class Solution {
                 String[] choices = token[1].split(",");
                 if (!exceptions(token)) {
                     quiz.addQuestion(new Question(token[0], choices,
-                 Integer.parseInt(token[2]), Integer.parseInt(token[3]),
-                  Integer.parseInt(token[4])));
+                 Integer.parseInt(token[2]), Integer.parseInt(token[2 + 1]),
+                  Integer.parseInt(token[2 + 2])));
                     count++;
                 }
             }
             if (count == q) {
-                System.out.println(Integer.toString(q) +
-                 " are added to the quiz");
+                System.out.println(Integer.toString(q)
+                + " are added to the quiz");
             }
         }
     }
@@ -307,24 +308,30 @@ public final class Solution {
      * @param      quiz  The quiz
      * @param      q     The answer count
      */
-    public static int three = 3;
-    public static int four = 4;
-    public static void startQuiz(final Scanner scan,
+    /**
+     * { var_description }.
+     */
+    private static int three = 3;
+    /**
+     * { var_description }.
+     */
+    private static int four = 4;
+    private static void startQuiz(final Scanner scan,
                                  final Quiz quiz, final int q) {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
         for (int qu = 0; qu < quiz.getSize(); qu++) {
-            String new_line1 = scan.nextLine();
-            (quiz.getQuestion(qu)).setResponse(new_line1);
-            System.out.println((quiz.getQuestion(qu)).getQuestionText() +
-             "(" + (quiz.getQuestion(qu)).getMaxMarks() + ")");
+            String new_line = scan.nextLine();
+            (quiz.getQuestion(qu)).setResponse(new_line);
+            System.out.println((quiz.getQuestion(qu)).getQuestionText()
+            + "(" + (quiz.getQuestion(qu)).getMaxMarks() + ")");
             String[] token2 = (quiz.getQuestion(qu)).getChoice();
             if (token2.length == 2) {
                 System.out.println(token2[0] + "	" + token2[1]);
             } else if (token2.length == three) {
-                System.out.println(token2[0] + "	" + token2[1] +
-                 "	" + token2[2]);
+                System.out.println(token2[0] + "	" + token2[1]
+                + "	" + token2[2]);
             } else {
                 System.out.println(token2[0] + "	" +
                  token2[1] + "	" + token2[2] + "	" + token2[three]);
