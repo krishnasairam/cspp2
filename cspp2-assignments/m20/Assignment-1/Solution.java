@@ -269,7 +269,7 @@ public final class Solution {
 							System.out.println("Invalid max marks for " + token[0]);
               break;
 						} else {
-							if (choices.length < 1) {
+							if (choices.length < 2) {
 								System.out.println(token[0] + "  does not have enough answer choices");
                 break;
 							} else {
