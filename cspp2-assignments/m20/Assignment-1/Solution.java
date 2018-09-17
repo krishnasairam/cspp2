@@ -252,7 +252,6 @@ public final class Solution {
 		if (q == 0) {
 			System.out.println("Quiz does not have questions");
 		} else {
-			System.out.println(Integer.toString(q) + " are added to the quiz");
 			for (int i = 0; i < q; i++) {
 				String new_line = scan.nextLine();
 				String[] token = new_line.split(":");
@@ -275,6 +274,7 @@ public final class Solution {
 									try {
 										quiz.addQuestion(new Question(token[0], choices, Integer.parseInt(token[2])
 										                              , Integer.parseInt(token[3]), Integer.parseInt(token[4])));
+										System.out.println(Integer.toString(q) + " are added to the quiz");
 									} catch (Exception e) {
 										System.out.println("Error! Malformed question");
 									}
