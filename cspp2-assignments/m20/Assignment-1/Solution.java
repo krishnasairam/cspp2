@@ -257,7 +257,7 @@ public final class Solution {
 				String new_line = scan.nextLine();
 				String[] token = new_line.split(":");
 				String[] choices = token[1].split(",");
-				if (token[1] == null) {
+				if (token[0] == "") {
 					System.out.println("Error! Malformed question");
           break;
 				} else {
