@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 /**
  * Class for question.
  */
@@ -238,7 +239,7 @@ public final class Solution {
     }
     public static boolean exceptions(String[] token) {
         String[] choices = token[1].split(",");
-        if (token[0] == "" || token.length < 5) {
+        if (token[0].length() == 0 || token.length < 5) {
             System.out.println("Error! Malformed question");
             return true;
         } else {
@@ -283,16 +284,12 @@ public final class Solution {
             for (int i = 0; i < q; i++) {
                 String new_line = scan.nextLine();
                 String[] token = new_line.split(":");
+                System.out.println( Arrays.toString(token));
                 String[] choices = token[1].split(",");
                 if (!exceptions(token)) {
-                    try {
-                        quiz.addQuestion(new Question(token[0], choices, Integer.parseInt(token[2])
-                                                      , Integer.parseInt(token[3]), Integer.parseInt(token[4])));
-                        count++;
-                    } catch (Exception e) {
-                        System.out.println("Error! Malformed question");
-                        break;
-                    }
+                    quiz.addQuestion(new Question(token[0], choices, Integer.parseInt(token[2])
+                                                  , Integer.parseInt(token[3]), Integer.parseInt(token[4])));
+                    count++;
                 }
             }
             if (count == q) {
