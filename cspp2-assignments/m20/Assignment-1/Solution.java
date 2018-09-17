@@ -270,7 +270,7 @@ public final class Solution {
                     } else {
                         if ((Integer.parseInt(token[2]) > four)) {
                             System.out.println(
-                                "Error! Correct answer choice number is out of range for question text 1");
+    "Error! Correct answer choice number is out of range for question text 1");
                             return true;
                         }
                     }
@@ -302,8 +302,8 @@ public final class Solution {
                 String[] choices = token[1].split(",");
                 if (!exceptions(token)) {
                     quiz.addQuestion(new Question(token[0], choices,
-                                                  Integer.parseInt(token[2]), Integer.parseInt(token[2 + 1]),
-                                                  Integer.parseInt(token[2 + 2])));
+                    Integer.parseInt(token[2]), Integer.parseInt(token[2 + 1]),
+                    Integer.parseInt(token[2 + 2])));
                     count++;
                 }
             }
@@ -316,11 +316,11 @@ public final class Solution {
     /**
     * { var_description }.
     */
-    private static int three = 3;
+    private static int three = 1+2;
     /**
      * { var_description }.
      */
-    private static int four = 4;
+    private static int four = 2+2;
     /**
      * Starts a quiz.
      *
@@ -337,16 +337,16 @@ public final class Solution {
             String newLine = scan.nextLine();
             (quiz.getQuestion(qu)).setResponse(newLine);
             System.out.println((quiz.getQuestion(qu)).getQuestionText()
-                               + "(" + (quiz.getQuestion(qu)).getMaxMarks() + ")");
+            + "(" + (quiz.getQuestion(qu)).getMaxMarks() + ")");
             String[] token2 = (quiz.getQuestion(qu)).getChoice();
             if (token2.length == 2) {
                 System.out.println(token2[0] + "\t" + token2[1]);
             } else if (token2.length == three) {
                 System.out.println(token2[0] + "\t" + token2[1]
-                                   + "\t" + token2[2]);
+                + "\t" + token2[2]);
             } else {
                 System.out.println(token2[0] + "\t"
-                                   + token2[1] + "\t" + token2[2] + "\t" + token2[three]);
+                + token2[1] + "\t" + token2[2] + "\t" + token2[three]);
             }
             System.out.println();
         }
@@ -364,11 +364,11 @@ public final class Solution {
                 System.out.println((quiz.getQuestion(q)).getQuestionText());
                 if ((quiz.getQuestion(q)).evaluateResponse()) {
                     System.out.println(" Correct Answer! - Marks Awarded: "
-                                       + Integer.toString((quiz.getQuestion(q)).getMaxMarks()));
+                    + Integer.toString((quiz.getQuestion(q)).getMaxMarks()));
                     totalscore += quiz.getQuestion(q).getMaxMarks();
                 } else {
                     System.out.println(" Wrong Answer! - Penalty: "
-                                       + Integer.toString((quiz.getQuestion(q)).getPenalty()));
+                    + Integer.toString((quiz.getQuestion(q)).getPenalty()));
                     totalscore += quiz.getQuestion(q).getPenalty();
                 }
             }
@@ -376,3 +376,5 @@ public final class Solution {
         }
     }
 }
+
+
