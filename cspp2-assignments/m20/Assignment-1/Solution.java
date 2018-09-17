@@ -272,8 +272,7 @@ public final class Solution {
         // store the user respone in the question object
 		for (int qu = 0; qu < quiz.getSize(); qu++) {
 				String new_line1 = scan.nextLine();
-				String[] token1 = new_line1.split(" ");
-				(quiz.getQuestion(qu)).setResponse(token1[1]);
+				(quiz.getQuestion(qu)).setResponse(new_line1);
 				System.out.println((quiz.getQuestion(qu)).getQuestionText()+"("+Integer.toString(qu+1)+")");
 				String[] token2 = (quiz.getQuestion(qu)).getChoice();
 				System.out.println(token2[0]+"	"+token2[1]+"	"+token2[2]+"	"+token2[3]);
