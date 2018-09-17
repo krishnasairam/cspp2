@@ -258,24 +258,30 @@ public final class Solution {
 				String[] choices = token[1].split(",");
 				if (token[1] == null) {
 					System.out.println("Error! Malformed question");
+          break;
 				} else {
 					if (Integer.parseInt(token[4]) > 0) {
 						System.out.println("Invalid penalty for " + token[0]);
+            break;
 					} else {
 						if (Integer.parseInt(token[3]) < 0) {
 							System.out.println("Invalid max marks for " + token[0]);
+              break;
 						} else {
 							if (choices.length < 1) {
 								System.out.println(token[0] + "  does not have enough answer choices");
+                break;
 							} else {
 								if ((Integer.parseInt(token[2]) > 4)) {
 									System.out.println("Error! Correct answer choice number is out of range for question text 1");
+                  break;
 								} else {
 									try {
 										quiz.addQuestion(new Question(token[0], choices, Integer.parseInt(token[2])
 										                              , Integer.parseInt(token[3]), Integer.parseInt(token[4])));
 									} catch (Exception e) {
 										System.out.println("Error! Malformed question");
+                    break;
 									}
 								}
 							}
