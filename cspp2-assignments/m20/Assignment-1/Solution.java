@@ -260,10 +260,10 @@ public final class Solution {
 				if (token[1] == null) {
 					System.out.println("Error! Malformed question");
 				} else {
-					if (Integer.parseInt(token[3]) > 0) {
+					if (Integer.parseInt(token[4]) > 0) {
 						System.out.println("Invalid penalty for " + token[0]);
 					} else {
-						if (Integer.parseInt(token[2]) < 0) {
+						if (Integer.parseInt(token[3]) < 0) {
 							System.out.println("Invalid max marks for " + token[0]);
 						} else {
 							if (choices.length < 1) {
