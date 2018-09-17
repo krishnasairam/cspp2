@@ -58,7 +58,7 @@ class Question {
      * @return     { description_of_the_return_value }
      */
     public boolean evaluateResponse() {
-    	return choices[correctAnswer] == response;
+    	return choices[correctAnswer-1].equals(response);
     }
     /**
      * Gets the correct answer.
