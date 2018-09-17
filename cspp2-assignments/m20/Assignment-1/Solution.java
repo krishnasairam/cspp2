@@ -257,8 +257,32 @@ public final class Solution {
 				String new_line = scan.nextLine();
 				String[] token = new_line.split(":");
 				String[] choices = token[1].split(",");
-				quiz.addQuestion(new Question(token[0], choices, Integer.parseInt(token[2])
-				                              , Integer.parseInt(token[3]), Integer.parseInt(token[4])));
+				if (token[1] == null) {
+					System.out.println("Error! Malformed question");
+				} else {
+					if (Integer.parseInt(token[3]) > 0) {
+						System.out.println("Invalid penalty for " + token[0]);
+					} else {
+						if (Integer.parseInt(token[2]) < 0) {
+							System.out.println("Invalid max marks for " + token[0]);
+						} else {
+							if (choices.length < 1) {
+								System.out.println(token[0] + "  does not have enough answer choices");
+							} else {
+								if ((Integer.parseInt(token[2]) > 4)) {
+									System.out.println("Error! Correct answer choice number is out of range for question text 1");
+								} else {
+									try {
+										quiz.addQuestion(new Question(token[0], choices, Integer.parseInt(token[2])
+										                              , Integer.parseInt(token[3]), Integer.parseInt(token[4])));
+									} catch (Exception e) {
+										System.out.println("Error! Malformed question");
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -279,7 +303,13 @@ public final class Solution {
 			(quiz.getQuestion(qu)).setResponse(new_line1);
 			System.out.println((quiz.getQuestion(qu)).getQuestionText() + "(" + (quiz.getQuestion(qu)).getMaxMarks() + ")");
 			String[] token2 = (quiz.getQuestion(qu)).getChoice();
-			System.out.println(token2[0] + "	" + token2[1] + "	" + token2[2] + "	" + token2[3]);
+			if (token2.length == 2) {
+				System.out.println(token2[0] + "	" + token2[1]);
+			} else if (token2.length == 3) {
+				System.out.println(token2[0] + "	" + token2[1] + "	" + token2[2]);
+			} else {
+				System.out.println(token2[0] + "	" + token2[1] + "	" + token2[2] + "	" + token2[3]);
+			}
 			System.out.println();
 		}
 	}
