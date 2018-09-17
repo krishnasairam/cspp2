@@ -238,7 +238,7 @@ public final class Solution {
     }
     public static boolean exceptions(String[] token) {
         String[] choices = token[1].split(",");
-        if (token[0] == "" || token[4] == "") {
+        if (token[0] == "" || token.length < 5) {
             System.out.println("Error! Malformed question");
             return true;
         } else {
