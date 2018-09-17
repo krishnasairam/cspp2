@@ -58,13 +58,7 @@ class Question {
      * @return     { description_of_the_return_value }
      */
     public boolean evaluateResponse() {
-    	int temp;
-    	try {
-    		temp = Integer.parseInt(response);
-    	} catch(Exception e) {
-    		return (Integer.toString(correctAnswer)).equals(response);
-    	}
-    	return temp == correctAnswer;
+    	return choices[correctAnswer] == response;
     }
     /**
      * Gets the correct answer.
