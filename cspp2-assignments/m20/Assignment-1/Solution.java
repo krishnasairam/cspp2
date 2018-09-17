@@ -273,7 +273,7 @@ public final class Solution {
 		for (int qu = 0; qu < quiz.getSize(); qu++) {
 				String new_line1 = scan.nextLine();
 				(quiz.getQuestion(qu)).setResponse(new_line1);
-				System.out.println((quiz.getQuestion(qu)).getQuestionText()+"("+Integer.toString(qu+1)+")");
+				System.out.println((quiz.getQuestion(qu)).getQuestionText()+"("+(quiz.getQuestion(qu)).getMaxMarks()+")");
 				String[] token2 = (quiz.getQuestion(qu)).getChoice();
 				System.out.println(token2[0]+"	"+token2[1]+"	"+token2[2]+"	"+token2[3]);
 				System.out.println();
