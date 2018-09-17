@@ -340,13 +340,13 @@ public final class Solution {
             + "(" + (quiz.getQuestion(qu)).getMaxMarks() + ")");
             String[] token2 = (quiz.getQuestion(qu)).getChoice();
             if (token2.length == 2) {
-                System.out.println(token2[0] + "    " + token2[1]);
+                System.out.println(token2[0] + "\t" + token2[1]);
             } else if (token2.length == three) {
-                System.out.println(token2[0] + "    " + token2[1]
-                + " " + token2[2]);
+                System.out.println(token2[0] + "\t" + token2[1]
+                + "\t" + token2[2]);
             } else {
-                System.out.println(token2[0] + "    "
-                + token2[1] + " " + token2[2] + "   " + token2[three]);
+                System.out.println(token2[0] + "\t"
+                + token2[1] + "\t" + token2[2] + "\t" + token2[three]);
             }
             System.out.println();
         }
