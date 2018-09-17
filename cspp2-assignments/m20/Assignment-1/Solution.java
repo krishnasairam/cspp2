@@ -284,7 +284,6 @@ public final class Solution {
             for (int i = 0; i < q; i++) {
                 String new_line = scan.nextLine();
                 String[] token = new_line.split(":");
-                System.out.println( Arrays.toString(token));
                 String[] choices = token[1].split(",");
                 if (!exceptions(token)) {
                     quiz.addQuestion(new Question(token[0], choices, Integer.parseInt(token[2])
