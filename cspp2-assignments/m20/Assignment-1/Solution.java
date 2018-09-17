@@ -249,6 +249,7 @@ public final class Solution {
 		// write your code here to read the questions from the console
 		// tokenize the question line and create the question object
 		// add the question objects to the quiz class
+    int count = 0;
 		if (q == 0) {
 			System.out.println("Quiz does not have questions");
 		} else {
@@ -278,7 +279,8 @@ public final class Solution {
 								} else {
 									try {
 										quiz.addQuestion(new Question(token[0], choices, Integer.parseInt(token[2])
-										                              , Integer.parseInt(token[3]), Integer.parseInt(token[4])));
+										      , Integer.parseInt(token[3]), Integer.parseInt(token[4])));
+                    count++;
 									} catch (Exception e) {
 										System.out.println("Error! Malformed question");
                     break;
@@ -289,7 +291,9 @@ public final class Solution {
 					}
 				}
 			}
+      if (count == q) {
 			System.out.println(Integer.toString(q) + " are added to the quiz");
+      }
 		}
 	}
 	/**
