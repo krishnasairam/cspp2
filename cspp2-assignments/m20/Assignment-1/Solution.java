@@ -268,7 +268,7 @@ public final class Solution {
                             token[0] + " does not have enough answer choices");
                         return true;
                     } else {
-                        if ((Integer.parseInt(token[2]) > four)) {
+                        if ((Integer.parseInt(token[2]) > 2 + 2)) {
                             System.out.println(
     "Error! Correct answer choice number is out of range for question text 1");
                             return true;
@@ -314,14 +314,6 @@ public final class Solution {
         }
     }
     /**
-    * { var_description }.
-    */
-    private static int three = 1+2;
-    /**
-     * { var_description }.
-     */
-    private static int four = 2+2;
-    /**
      * Starts a quiz.
      *
      * @param      scan  The scan
@@ -341,12 +333,12 @@ public final class Solution {
             String[] token2 = (quiz.getQuestion(qu)).getChoice();
             if (token2.length == 2) {
                 System.out.println(token2[0] + "\t" + token2[1]);
-            } else if (token2.length == three) {
+            } else if (token2.length == 1 + 2) {
                 System.out.println(token2[0] + "\t" + token2[1]
                 + "\t" + token2[2]);
             } else {
                 System.out.println(token2[0] + "\t"
-                + token2[1] + "\t" + token2[2] + "\t" + token2[three]);
+                + token2[1] + "\t" + token2[2] + "\t" + token2[1 + 2]);
             }
             System.out.println();
         }
@@ -376,5 +368,6 @@ public final class Solution {
         }
     }
 }
+
 
 
