@@ -10,9 +10,9 @@ class Foodlog {
     }
     Foodlog(String[] food) {
         nameoffood = food[0];
-        date = food[1];
-        time = food[2];
-        quantity = food[3];
+        quantity = food[1];
+        date = food[2];
+        time = food[3];
     }
     public String getdate() {
         return date;
