@@ -50,12 +50,8 @@ class Plagiarism {
             }
         }
         int length = textlist.size();
-        System.out.println("            File1.txt   File2.txt   File3.txt   File4.txt   File5.txt");
         for (int[] x : bag) {
-            for (int i = 1; i <= length; i++) {
-                System.out.print(Math.round((x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1]))) * 100));
-                System.out.println("  ");
-            }
+            System.out.print(Math.round((x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1]))) * 100));
             System.out.println();
         }
     }
@@ -65,7 +61,7 @@ public class Solution {
     public static void main(String[] args) throws Exception {
         Plagiarism pl = new Plagiarism();
         Scanner scan = new Scanner(System.in);
-        if (scan.next().equals(null)) {
+        if (scan.next().equals("")) {
             System.out.println("empty directory");
         } else {
             File folder = new File(scan.next());
