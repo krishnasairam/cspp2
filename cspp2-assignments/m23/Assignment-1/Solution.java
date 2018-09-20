@@ -65,23 +65,27 @@ public class Solution {
     public static void main(String[] args) throws Exception {
         Plagiarism pl = new Plagiarism();
         Scanner scan = new Scanner(System.in);
-        File folder = new File(scan.next());
-        File[] listOfFiles = folder.listFiles();
-        for (File i : listOfFiles) {
-            FileReader fr = new FileReader(i);
-            BufferedReader br = new BufferedReader(fr);
-            String buffer = "";
-            String s;
-            while (((s = br.readLine()) != null)) {
-                buffer += s;
+        if (scan.next().equals(null)) {
+            System.out.println("empty directory");
+        } else {
+            File folder = new File(scan.next());
+            File[] listOfFiles = folder.listFiles();
+            for (File i : listOfFiles) {
+                FileReader fr = new FileReader(i);
+                BufferedReader br = new BufferedReader(fr);
+                String buffer = "";
+                String s;
+                while (((s = br.readLine()) != null)) {
+                    buffer += s;
+                }
+                Pattern p = Pattern.compile("[^a-z A-Z 0-9]");
+                Matcher m = p.matcher(buffer);
+                String words = m.replaceAll("").replace(".", " ").toLowerCase();
+                br.close();
+                fr.close();
+                pl.load(words);
             }
-            Pattern p = Pattern.compile("[^a-z A-Z 0-9]");
-            Matcher m = p.matcher(buffer);
-            String words = m.replaceAll("").replace(".", " ").toLowerCase();
-            br.close();
-            fr.close();
-            pl.load(words);
+            pl.bagofwords();
         }
-        pl.bagofwords();
     }
 }
