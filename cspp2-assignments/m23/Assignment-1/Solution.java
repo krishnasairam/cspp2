@@ -43,8 +43,6 @@ class Plagiarism {
                     }
                     k += sub.length();
                 }
-                System.out.println(sub);
-                System.out.println("------------");
                 double a = sub.length();
                 double b = i.length();
                 double c = j.length();
