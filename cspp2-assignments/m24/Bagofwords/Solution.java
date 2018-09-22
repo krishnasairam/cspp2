@@ -59,7 +59,7 @@ class Plagiarism {
         int c0 = length;
         int c1 = 1;
         int c2 = 1;
-        System.out.print("\t\t");
+        System.out.print("      \t");
         for (int m = 1; m <= length; m++) {
             System.out.print("File");
             System.out.print(m);
@@ -79,9 +79,7 @@ class Plagiarism {
             } else {
                 System.out.print(s);
             }
-            if (((c0 + 1) % length) != 0) {
-                System.out.print("\t\t");
-            }
+            System.out.print("\t\t");
             c0++;
             if ((c0 % length) == 0) {
                 System.out.println();
