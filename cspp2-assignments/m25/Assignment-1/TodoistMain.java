@@ -81,7 +81,7 @@ class Task {
 			urgent = urgent1;
 			status = status1;
 		} else {
-			System.out.println("Invalid status " + status);
+			System.out.println("Invalid status " + status1);
 		}
 	}
 	public String getname() {
@@ -136,7 +136,9 @@ public class TodoistMain {
 				testAddTask(todo, tokens);
 				break;
 			case "print-todoist":
-				System.out.println(todo);
+				if (!todo.equals("")) {
+					System.out.println(todo);
+				}
 				break;
 			case "get-next":
 				System.out.println(todo.getNextTask(tokens[1]));
