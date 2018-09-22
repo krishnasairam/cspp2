@@ -78,7 +78,7 @@ class Plagiarism {
             } else {
                 System.out.print(s);
             }
-            if (c1 == length) {
+            if (((c0 + 1) % length) != 0) {
                 System.out.print("\t\t");
             }
             c0++;
