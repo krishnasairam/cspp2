@@ -147,8 +147,12 @@ public class TodoistMain {
 				todo.print();
 				break;
 			case "get-next":
+			try {
 				System.out.println(todo.getNextTask(tokens[1]));
+			} catch (Exception e) {
+				System.out.println("null");
 				break;
+			}
 			case "get-next-n":
 				int n = Integer.parseInt(tokens[2]);
 				Task[] tasks = todo.getNextTask(tokens[1], n);
