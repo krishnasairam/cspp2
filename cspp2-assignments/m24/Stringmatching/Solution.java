@@ -8,7 +8,6 @@ import java.util.*;
 class Plagiarism {
     private ArrayList<HashMap> textlist;
     private ArrayList<String> lss;
-    private HashMap<String, Integer> frequence;
     Plagiarism() {
         textlist = new ArrayList<HashMap> ();
         lss = new ArrayList<String> ();
@@ -16,22 +15,9 @@ class Plagiarism {
     public void loadlss(String text) {
         lss.add(text);
     }
-    public void load(String text) {
-        frequence = new HashMap<String, Integer> ();
-        String[] words = text.split(" ");
-        for (String i : words) {
-            int count = 0;
-            for (String j : words) {
-                if (i.equals(j)) {
-                    count += 1;
-                }
-            }
-            frequence.put(i, count);
-        }
-        textlist.add(frequence);
-    }
     public void longestsubstring() {
         List<Long> listsub = new ArrayList<Long>();
+        //System.out.println(lss);
         for (String i : lss) {
             for (String j : lss) {
                 String sub = "";
@@ -39,6 +25,8 @@ class Plagiarism {
                     for (int l = k ; l < j.length(); l++) {
                         if (i.contains(j.substring(k, l + 1)) && sub.length() < j.substring(k, l).length()) {
                             sub = j.substring(k, l + 1);
+                        } else {
+                            break;
                         }
                     }
                     k += sub.length();
@@ -46,32 +34,7 @@ class Plagiarism {
                 double a = sub.length();
                 double b = i.length();
                 double c = j.length();
-                listsub.add(Math.round((a * 2 / (b + c)) * 100));
-            }
-        }
-        int length = lss.size();
-        int c0 = length;
-        int c1 = 1;
-        System.out.print("           ");
-        for (int m = 1; m <= length; m++) {
-            System.out.print("File");
-            System.out.print(m);
-            System.out.print(".txt");
-            System.out.print("    ");
-        }
-        System.out.println();
-        for (long x : listsub) {
-            if ((c0 % length) == 0) {
-                System.out.print("File");
-                System.out.print(c1);
-                System.out.print(".txt    ");
-            }
-            System.out.print(x);
-            System.out.print("    ");
-            c0++;
-            if ((c0 % length) == 0) {
-                System.out.println();
-                c1++;
+                System.out.println(Math.round((a * 2 / (b + c)) * 100));
             }
         }
     }
@@ -99,7 +62,7 @@ public class Solution {
                 pl.loadlss(words);
             }
         } catch (Exception e) {
-            System.out.println("empty directory");
+            System.out.println("Empty Directory");
         }
         pl.longestsubstring();
     }
