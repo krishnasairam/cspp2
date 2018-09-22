@@ -30,7 +30,7 @@ class Todoist {
 	}
 	public String toString() {
 		for (Task i : tasklist) {
-			return i.toString();
+			i.toString();
 		}
 		return null;
 	}
