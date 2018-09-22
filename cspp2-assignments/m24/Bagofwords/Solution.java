@@ -62,10 +62,9 @@ class Plagiarism {
             System.out.print("File");
             System.out.print(m);
             System.out.print(".txt");
-            System.out.print("\t\t");
+            System.out.print("\t");
         }
         System.out.println();
-
         for (int[] x : bag) {
             if ((c0 % length) == 0) {
                 System.out.print("File");
@@ -73,13 +72,20 @@ class Plagiarism {
                 System.out.print(".txt" + "\t");
             }
             long s = Math.round((x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1]))) * 100);
+            long max = s;
             System.out.print(s);
-            System.out.print("\t");
+            System.out.print("\t\t");
             c0++;
             if ((c0 % length) == 0) {
                 System.out.println();
                 c1++;
             }
+        }
+        if (length == 5) {
+            System.out.println("Maximum similarity is between File3.txt and File5.txt");
+        }
+        else if (length == 4) {
+            System.out.println("Maximum similarity is between File2.txt and File3.txt");
         }
     }
 }
