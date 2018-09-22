@@ -58,7 +58,11 @@ class Todoist {
 		return tasklist;
 	}
 	public int totalTime4Completion() {
-		return 1;
+		int time = 0;
+		for (Task i : tasklist) {
+			time += i.gettime();
+		}
+		return time;
 	}
 }
 class Task {
@@ -91,6 +95,9 @@ class Task {
 	}
 	public int gettemp() {
 		return temp;
+	}
+	public int gettime() {
+		return time;
 	}
 	public String getname() {
 		return name;
