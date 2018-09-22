@@ -177,7 +177,7 @@ public class TodoistMain {
 	public static void testTask(final String[] tokens) {
 		try {
 			Task s = createTask(tokens);
-			if (s.equals(null)) {
+			if (!s.equals(null)) {
 				System.out.println(s);
 			}
 		} catch (Exception e) {
