@@ -29,8 +29,12 @@ class Todoist {
 		tasklist = temp;
 	}
 	public void print() {
+		int j = 0;
 		for (Task i : tasklist) {
-			System.out.println(i.toString());
+			if (j < size) {
+				System.out.println(i.toString());
+				j++;
+			}
 		}
 	}
 	public Task getNextTask(String name) {
