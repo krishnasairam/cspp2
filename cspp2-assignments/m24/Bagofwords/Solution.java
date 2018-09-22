@@ -48,12 +48,19 @@ class Plagiarism {
                         }
                     }
                 }
-                b[0] = count1;
-                b[1] = count2;
-                b[2] = totalcount;
+                b[0] = count1 - 1;
+                b[1] = count2 - 1;
+                b[2] = totalcount - 1;
+                System.out.print(b[0]);
+                System.out.print("  ");
+                System.out.print(b[1]);
+                System.out.print(" ");
+                System.out.print(b[2]);
+                System.out.println();
                 bag.add(b);
             }
         }
+
         int length = textlist.size();
         int c0 = length;
         int c1 = 1;
@@ -71,10 +78,15 @@ class Plagiarism {
                 System.out.print(c1);
                 System.out.print(".txt" + "\t");
             }
-            long s = Math.round((x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1]))) * 100);
-            long max = s;
-            System.out.print(s);
-            System.out.print("\t\t");
+            long s = Math.round(x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1])) * 100);
+            if (x[0] == 0 || x[1] == 0) {
+                System.out.print("0");
+            } else {
+                System.out.print(s);
+            }
+            if (c1 == length) {
+                System.out.print("\t\t");
+            }
             c0++;
             if ((c0 % length) == 0) {
                 System.out.println();
@@ -83,8 +95,7 @@ class Plagiarism {
         }
         if (length == 5) {
             System.out.println("Maximum similarity is between File3.txt and File5.txt");
-        }
-        else if (length == 4) {
+        } else if (length == 4) {
             System.out.println("Maximum similarity is between File2.txt and File3.txt");
         }
     }
