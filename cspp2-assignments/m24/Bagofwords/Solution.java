@@ -70,11 +70,11 @@ class Plagiarism {
             if ((c0 % length) == 0) {
                 System.out.print("File");
                 System.out.print(c1);
-                System.out.print(".txt" + "/t");
+                System.out.print(".txt" + "\t");
             }
             long s = Math.round((x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1]))) * 100);
             System.out.print(s);
-            System.out.print("/t");
+            System.out.print("\t");
             c0++;
             if ((c0 % length) == 0) {
                 System.out.println();
