@@ -97,7 +97,7 @@ class Task {
 		return status;
 	}
 	public String toString() {
-		if (tasktitle.equals("")) {
+		if (!tasktitle.equals("")) {
 			String s = tasktitle + ", " + name + ", " + Integer.toString(time) + ", ";
 			if (important) {
 				s += "Important, ";
