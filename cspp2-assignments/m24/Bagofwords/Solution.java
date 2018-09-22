@@ -51,12 +51,6 @@ class Plagiarism {
                 b[0] = count1 - 1;
                 b[1] = count2 - 1;
                 b[2] = totalcount - 1;
-                System.out.print(b[0]);
-                System.out.print("  ");
-                System.out.print(b[1]);
-                System.out.print(" ");
-                System.out.print(b[2]);
-                System.out.println();
                 bag.add(b);
             }
         }
