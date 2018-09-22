@@ -65,6 +65,7 @@ class Task {
 	private boolean important;
 	private boolean urgent;
 	private String status;
+	private int temp;
 	Task() {
 
 	}
@@ -80,9 +81,13 @@ class Task {
 			important = important1;
 			urgent = urgent1;
 			status = status1;
+			temp = 1;
 		} else {
 			System.out.println("Invalid status " + status1);
 		}
+	}
+	public int gettemp() {
+		return temp;
 	}
 	public String getname() {
 		return name;
@@ -177,8 +182,7 @@ public class TodoistMain {
 	public static void testTask(final String[] tokens) {
 		try {
 			Task s = createTask(tokens);
-			System.out.println(s.getname());
-			if (!(s.getname().equals(null))) {
+			if (s.gettemp() == 1) {
 				System.out.println(s);
 			}
 		} catch (Exception e) {
