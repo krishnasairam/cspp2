@@ -64,9 +64,7 @@ class Plagiarism {
             System.out.print("File");
             System.out.print(m);
             System.out.print(".txt");
-            if (length - 1 != c2) {
-                System.out.print("\t");
-            }
+            System.out.print("\t");
         }
         System.out.println();
         for (int[] x : bag) {
