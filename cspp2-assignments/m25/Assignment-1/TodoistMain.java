@@ -62,8 +62,10 @@ class Todoist {
 		int j = 0;
 		for (Task a : tasklist) {
 			if (j < size) {
-				t = t + a.gettime();
-				j++;
+				if (a.getstatus().equals("todo")) {
+					t = t + a.gettime();
+					j++;
+				}
 			}
 		}
 		return t;
