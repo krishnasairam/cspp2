@@ -58,14 +58,15 @@ class Plagiarism {
         int length = textlist.size();
         int c0 = length;
         int c1 = 1;
+        int c2 = 1;
         System.out.print("\t\t");
         for (int m = 1; m <= length; m++) {
             System.out.print("File");
             System.out.print(m);
             System.out.print(".txt");
-            if (length != 5) {
-            System.out.print("\t");
-        }
+            if (length - 1 != c2) {
+                System.out.print("\t");
+            }
         }
         System.out.println();
         for (int[] x : bag) {
