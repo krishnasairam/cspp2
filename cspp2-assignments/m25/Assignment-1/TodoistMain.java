@@ -72,7 +72,7 @@ class Task {
 		if (title.equals("")) {
 			System.out.println("Title not provided");
 		} else if (timeToComplete < 0) {
-			System.out.println("Invalid timeToComplete <time value>");
+			System.out.print("Invalid timeToComplete " + Integer.toString(timeToComplete));
 		} else if (status1.equals("todo") || status1.equals("done")) {
 			tasktitle = title;
 			name = assignedTo;
@@ -81,7 +81,7 @@ class Task {
 			urgent = urgent1;
 			status = status1;
 		} else {
-			System.out.println("Invalid status <status value>");
+			System.out.println("Invalid status " + status);
 		}
 	}
 	public String getname() {
@@ -97,21 +97,23 @@ class Task {
 		return status;
 	}
 	public String toString() {
-		String s = tasktitle + ", " + name + ", " + Integer.toString(time) + ", ";
-		if (important) {
-			s += "Important, ";
-		} else {
-			s += "Not Important, ";
+		if (name.equals("")) {
+			String s = tasktitle + ", " + name + ", " + Integer.toString(time) + ", ";
+			if (important) {
+				s += "Important, ";
+			} else {
+				s += "Not Important, ";
+			}
+			if (urgent) {
+				s += "Urgent, ";
+			} else {
+				s += "Not Urgent, ";
+			}
+			s += status;
+			return s;
 		}
-		if (urgent) {
-			s += "Urgent, ";
-		} else {
-			s += "Not Urgent, ";
-		}
-		s += status;
-		return s;
+		return null;
 	}
-
 }
 /**
  * Class for todoist main.
