@@ -72,7 +72,7 @@ class Task {
 		if (title.equals("")) {
 			System.out.println("Title not provided");
 		} else if (timeToComplete < 0) {
-			System.out.print("Invalid timeToComplete " + Integer.toString(timeToComplete));
+			System.out.println("Invalid timeToComplete " + Integer.toString(timeToComplete));
 		} else if (status1.equals("todo") || status1.equals("done")) {
 			tasktitle = title;
 			name = assignedTo;
@@ -177,7 +177,8 @@ public class TodoistMain {
 	public static void testTask(final String[] tokens) {
 		try {
 			Task s = createTask(tokens);
-			if (!s.getname().equals("")) {
+			System.out.println(s.getname());
+			if (!(s.getname().equals(null))) {
 				System.out.println(s);
 			}
 		} catch (Exception e) {
