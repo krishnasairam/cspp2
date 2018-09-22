@@ -58,11 +58,15 @@ class Todoist {
 		return tasklist;
 	}
 	public int totalTime4Completion() {
-		int time = 0;
-		for (Task i : tasklist) {
-			time += i.gettime();
+		int t = 0;
+		int j = 0;
+		for (Task a : tasklist) {
+			if (j < size) {
+				t = t + a.gettime();
+				j++;
+			}
 		}
-		return time;
+		return t;
 	}
 }
 class Task {
@@ -97,7 +101,7 @@ class Task {
 		return temp;
 	}
 	public int gettime() {
-		return time;
+		return this.time;
 	}
 	public String getname() {
 		return name;
@@ -154,12 +158,12 @@ public class TodoistMain {
 				todo.print();
 				break;
 			case "get-next":
-			try {
-				System.out.println(todo.getNextTask(tokens[1]));
-			} catch (Exception e) {
-				System.out.println("null");
-				break;
-			}
+				try {
+					System.out.println(todo.getNextTask(tokens[1]));
+				} catch (Exception e) {
+					System.out.println("null");
+					break;
+				}
 			case "get-next-n":
 				int n = Integer.parseInt(tokens[2]);
 				Task[] tasks = todo.getNextTask(tokens[1], n);
