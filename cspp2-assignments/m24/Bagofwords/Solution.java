@@ -101,7 +101,7 @@ class Plagiarism {
             }
             if (z[0] < (int) s && (int) s != number) {
                 z[0] = (int) s;
-                z[2] = (int) (c0 - (length - 1))/c1;
+                z[2] = (int) (c0 - (length - 1)) / c1;
                 z[1] = c1;
             }
 
