@@ -50,7 +50,7 @@ class Plagiarism {
      */
     public void bagofwords() {
         ArrayList<int[]> bag = new ArrayList<int[]>();
-        int[] z = new int[3];
+        int[] z = new int[1 + 2];
         for (HashMap<String, Integer> i : textList) {
             for (HashMap<String, Integer> j : textList) {
                 int totalcount = 0;
@@ -112,7 +112,10 @@ class Plagiarism {
                 c1++;
             }
         }
-        System.out.println("Maximum similarity is between file" + Integer.toString(z[1]) + ".txt and file" + Integer.toString(z[2]) + ".txt");
+        if (z[1] != 0) {
+            System.out.println("Maximum similarity is between File"
+ + Integer.toString(z[1]) + ".txt and File" + Integer.toString(z[2]) + ".txt");
+        }
     }
 }
 /**
