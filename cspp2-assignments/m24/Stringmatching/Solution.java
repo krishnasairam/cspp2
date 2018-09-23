@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import java.util.HashMap;
 import java.util.ArrayList;
 /**
  * Class for plagiarism.
@@ -18,14 +17,14 @@ class Plagiarism {
     * Constructs the object.
     */
     Plagiarism() {
-        lss = new ArrayList<String> ();
+        lss = new ArrayList<String>();
     }
     /**
      * loadlss.
      *
      * @param      text  The text.
      */
-    public void loadlss(String text) {
+    public void loadlss(final String text) {
         lss.add(text);
     }
     /**
@@ -42,7 +41,7 @@ class Plagiarism {
         System.out.println();
         ArrayList<Long> listsub = new ArrayList<Long>();
         int x = 1;
-        int[] z = new int[3];
+        int[] z = new int[1 + 2];
         for (String i : lss) {
             String s = "File" + Integer.toString(x) + ".txt";
             int y = 1;
@@ -53,24 +52,26 @@ class Plagiarism {
                     if (i.length() == 0) {
                         break;
                     }
-                    for (int l = k ; l < j.length(); l++) {
-                        if ((i.contains(j.substring(k, l + 1)) && sub.length() <= j.substring(k, l).length())) {
+                    for (int l = k; l < j.length(); l++) {
+                        if ((i.contains(j.substring(k, l + 1)) &&
+                         sub.length() <= j.substring(k, l).length())) {
                             sub = j.substring(k, l + 1);
                         }
                     }
                     k += sub.length();
                 }
+                final int number = 100;
                 double a = sub.length();
                 double b = i.length();
                 double c = j.length();
-                double d = (double)(Math.round((a * 2 / (b + c)) * 100));
-                if (z[0] < (int) d && (int) d != 100) {
+                double d = (double) (Math.round((a * 2 / (b + c)) * number));
+                if (z[0] < (int) d && (int) d != number) {
                     z[0] = (int) d;
                     z[1] = x;
                     z[2] = y;
                 }
                 if (i.equals(j)) {
-                    System.out.print((double) 100);
+                    System.out.print((double) number);
                 } else {
                     System.out.print(d);
                 }
@@ -81,7 +82,8 @@ class Plagiarism {
             x++;
         }
         if (z[1] != 0) {
-            System.out.println("Maximum similarity is between file" + Integer.toString(z[1]) + ".txt and file" + Integer.toString(z[2]) + ".txt");
+            System.out.println("Maximum similarity is between file" +
+ Integer.toString(z[1]) + ".txt and file" + Integer.toString(z[2]) + ".txt");
         }
     }
 }
@@ -130,3 +132,5 @@ public final class Solution {
         pl.longestsubstring();
     }
 }
+
+
