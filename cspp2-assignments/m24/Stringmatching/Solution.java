@@ -16,17 +16,30 @@ class Plagiarism {
         lss.add(text);
     }
     public void longestsubstring() {
+        System.out.print("      " + "\t\t");
+        for (int m = 1; m <= lss.size(); m++) {
+            System.out.print("File");
+            System.out.print(m);
+            System.out.print(".txt");
+            System.out.print("\t");
+        }
+        System.out.println();
         List<Long> listsub = new ArrayList<Long>();
-        //System.out.println(lss);
+        int x = 1;
+        int[] z = new int[3];
         for (String i : lss) {
+            String s = "File" + Integer.toString(x) + ".txt";
+            int y = 1;
+            System.out.print(s + "\t");
             for (String j : lss) {
                 String sub = "";
                 for (int k = 0; k < j.length();) {
+                    if (i.length() == 0) {
+                        break;
+                    }
                     for (int l = k ; l < j.length(); l++) {
-                        if (i.contains(j.substring(k, l + 1)) && sub.length() < j.substring(k, l).length()) {
+                        if ((i.contains(j.substring(k, l + 1)) && sub.length() <= j.substring(k, l).length())) {
                             sub = j.substring(k, l + 1);
-                        } else {
-                            break;
                         }
                     }
                     k += sub.length();
@@ -34,9 +47,24 @@ class Plagiarism {
                 double a = sub.length();
                 double b = i.length();
                 double c = j.length();
-                System.out.println(Math.round((a * 2 / (b + c)) * 100));
+                double d = (double)(Math.round((a * 2 / (b + c)) * 100));
+                if (z[0] < (int) d && (int) d != 100) {
+                    z[0] = (int) d;
+                    z[1] = x;
+                    z[2] = y;
+                }
+                if (i.equals(j)) {
+                    System.out.print((double) 100);
+                } else {
+                    System.out.print(d);
+                }
+                System.out.print("\t\t");
+                y++;
             }
+            System.out.println();
+            x++;
         }
+        System.out.println("Maximum similarity is between file" + Integer.toString(z[1]) + ".txt and file" + Integer.toString(z[2]) + ".txt");
     }
 }
 public class Solution {
