@@ -51,7 +51,6 @@ class Plagiarism {
     public void bagofwords() {
         ArrayList<int[]> bag = new ArrayList<int[]>();
         int[] z = new int[3];
-        int c2 = 0;
         for (HashMap<String, Integer> i : textList) {
             for (HashMap<String, Integer> j : textList) {
                 int totalcount = 0;
@@ -73,7 +72,6 @@ class Plagiarism {
                 b[2] = totalcount - 1;
                 bag.add(b);
             }
-            c2++;
         }
 
         int length = textList.size();
@@ -103,8 +101,8 @@ class Plagiarism {
             }
             if (z[0] < (int) s && (int) s != number) {
                 z[0] = (int) s;
-                z[1] = c2;
-                z[2] = c1;
+                z[2] = (int) (c0 - (length - 1))/c1;
+                z[1] = c1;
             }
 
             System.out.print("\t\t");
@@ -127,7 +125,6 @@ public final class Solution {
     private Solution() {
         //Empty.
     }
-
     /**
      * {Main method}.
      *
