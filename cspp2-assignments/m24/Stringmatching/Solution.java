@@ -53,8 +53,8 @@ class Plagiarism {
                         break;
                     }
                     for (int l = k; l < j.length(); l++) {
-                        if ((i.contains(j.substring(k, l + 1)) &&
-                         sub.length() <= j.substring(k, l).length())) {
+                        if ((i.contains(j.substring(k, l + 1))
+                         && sub.length() <= j.substring(k, l).length())) {
                             sub = j.substring(k, l + 1);
                         }
                     }
@@ -82,8 +82,8 @@ class Plagiarism {
             x++;
         }
         if (z[1] != 0) {
-            System.out.println("Maximum similarity is between file" +
- Integer.toString(z[1]) + ".txt and file" + Integer.toString(z[2]) + ".txt");
+            System.out.println("Maximum similarity is between file"
+ + Integer.toString(z[1]) + ".txt and file" + Integer.toString(z[2]) + ".txt");
         }
     }
 }
@@ -132,5 +132,7 @@ public final class Solution {
         pl.longestsubstring();
     }
 }
+
+
 
 
