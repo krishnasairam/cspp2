@@ -45,12 +45,13 @@ class Plagiarism {
         }
         textList.add(frequency);
     }
-
     /**
      * {Bag of Words}.
      */
     public void bagofwords() {
         ArrayList<int[]> bag = new ArrayList<int[]>();
+        int[] z = new int[3];
+        int c2 = 0;
         for (HashMap<String, Integer> i : textList) {
             for (HashMap<String, Integer> j : textList) {
                 int totalcount = 0;
@@ -72,12 +73,12 @@ class Plagiarism {
                 b[2] = totalcount - 1;
                 bag.add(b);
             }
+            c2++;
         }
 
         int length = textList.size();
         int c0 = length;
         int c1 = 1;
-        int c2 = 1;
         System.out.print("      " + "\t\t");
         for (int m = 1; m <= length; m++) {
             System.out.print("File");
@@ -94,12 +95,18 @@ class Plagiarism {
             }
             final int number = 100;
             long s = Math.round(
-                x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1])) * number);
+                         x[2] / (Math.sqrt(x[0]) * Math.sqrt(x[1])) * number);
             if (x[0] == 0 || x[1] == 0) {
                 System.out.print("0");
             } else {
                 System.out.print(s);
             }
+            if (z[0] < (int) s && (int) s != number) {
+                z[0] = (int) s;
+                z[1] = c2;
+                z[2] = c1;
+            }
+
             System.out.print("\t\t");
             c0++;
             if ((c0 % length) == 0) {
@@ -107,13 +114,7 @@ class Plagiarism {
                 c1++;
             }
         }
-        if (length == 2 + 2 + 1) {
-            System.out.println(
-                "Maximum similarity is between File3.txt and File5.txt");
-        } else if (length == 2 + 2) {
-            System.out.println(
-                "Maximum similarity is between File2.txt and File3.txt");
-        }
+        System.out.println("Maximum similarity is between file" + Integer.toString(z[1]) + ".txt and file" + Integer.toString(z[2]) + ".txt");
     }
 }
 /**
