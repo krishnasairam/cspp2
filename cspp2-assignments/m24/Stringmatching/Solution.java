@@ -1,20 +1,36 @@
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.BufferedReader;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.*;
+/**
+ * Class for plagiarism.
+ */
 class Plagiarism {
-    private ArrayList<HashMap> textlist;
+    /**
+     * lss.
+     */
     private ArrayList<String> lss;
+    /**
+    * Constructs the object.
+    */
     Plagiarism() {
-        textlist = new ArrayList<HashMap> ();
         lss = new ArrayList<String> ();
     }
+    /**
+     * loadlss.
+     *
+     * @param      text  The text.
+     */
     public void loadlss(String text) {
         lss.add(text);
     }
+    /**
+     * longestsubstring.
+     */
     public void longestsubstring() {
         System.out.print("      " + "\t\t");
         for (int m = 1; m <= lss.size(); m++) {
@@ -24,7 +40,7 @@ class Plagiarism {
             System.out.print("\t");
         }
         System.out.println();
-        List<Long> listsub = new ArrayList<Long>();
+        ArrayList<Long> listsub = new ArrayList<Long>();
         int x = 1;
         int[] z = new int[3];
         for (String i : lss) {
@@ -69,8 +85,25 @@ class Plagiarism {
         }
     }
 }
-public class Solution {
-    public static void main(String[] args) throws Exception {
+/**
+ * Class for solution.
+ */
+public final class Solution {
+    /**
+    * Constructs the object.
+    */
+    private Solution() {
+        //Empty.
+    }
+
+    /**
+    * {Main method}.
+    *
+    * @param      args       The arguments
+    *
+    * @throws     Exception  {Exception class}
+    */
+    public static void main(final String[] args) throws Exception {
         Plagiarism pl = new Plagiarism();
         Scanner scan = new Scanner(System.in);
         try {
